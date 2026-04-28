@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  timetrack-db:
+    image: mysql:8.0
+    container_name: timetrack_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword123
+      MYSQL_DATABASE: timetrack_db
+      MYSQL_USER: admin_timetrack
+      MYSQL_PASSWORD: superpassword123
+    ports:
+      - "3306:3306"
+    volumes:
+      # ESTA ES LA LÍNEA MÁGICA:
+      # Toma tu archivo init.sql y lo mete en la carpeta de auto-inicio de MySQL
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
