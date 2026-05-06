@@ -1,6 +1,8 @@
 package com.timetrack.attendance.Model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Entity
@@ -12,31 +14,36 @@ public class Asistencia {
     @Column(name = "id")
     private Long id;
 
+    @NotNull(message = "La fecha y hora de marcaje es obligatoria")
     @Column(name = "fecha_hora_marcaje")
     private LocalDateTime fechaHoraMarcaje;
 
+    @NotNull(message = "La latitud de la marca es obligatoria")
     @Column(name = "latitud_marca")
     private Double latitudMarca;
 
+    @NotNull(message = "La longitud de la marca es obligatoria")
     @Column(name = "longitud_marca")
     private Double longitudMarca;
 
+    @NotBlank(message = "El estado de validación biométrica no puede estar en blanco")
     @Column(name = "validacion_biometrica")
     private String validacionBiometrica;
 
+    @NotBlank(message = "El estado de validación GPS no puede estar en blanco")
     @Column(name = "validacion_gps")
     private String validacionGps;
 
+    @NotNull(message = "El ID del usuario es obligatorio")
     @Column(name = "USUARIO_id")
     private Long usuarioId;
 
+    @NotNull(message = "El ID del tipo de marcaje es obligatorio")
     @Column(name = "TIPO_MARCAJE_id")
     private Long tipoMarcajeId;
 
-
     public Asistencia() {
     }
-
 
     public Long getId() {
         return id;
