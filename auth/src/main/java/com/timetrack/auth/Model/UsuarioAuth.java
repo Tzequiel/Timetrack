@@ -36,7 +36,5 @@ public class UsuarioAuth {
     public void setPasswordHash(String passwordHash) {
         this.passwordHash = passwordHash;
     }
-
-    // ¡Genera Getters y Setters en IntelliJ!
     
 }
