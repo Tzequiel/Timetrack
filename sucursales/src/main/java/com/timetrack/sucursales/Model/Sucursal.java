@@ -23,6 +23,8 @@ public class Sucursal {
     @Column(name = "EMPRESA_id")
     private Long empresaId;
 
+    public Sucursal() {}
+
     public Sucursal(Long id, String nombre, Double latitudCentro, String direccion, Double longitudCentro, Integer radioToleranciaMetros, Long empresaId) {
         this.id = id;
         this.nombre = nombre;
