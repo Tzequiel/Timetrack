@@ -33,11 +33,10 @@ public class Asistencia {
     @Column(name = "TIPO_MARCAJE_id")
     private Long tipoMarcajeId;
 
-    // Constructor vacío obligatorio para Spring Boot
+
     public Asistencia() {
     }
 
-    // A partir de aquí generamos los Getters y Setters básicos
 
     public Long getId() {
         return id;
