@@ -1,0 +1,17 @@
+Index: sucursales/src/main/java/com/timetrack/sucursales/Model/Sucursal.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.timetrack.sucursales.Model;\r\nimport jakarta.persistence.*;\r\n\r\n@Entity\r\n@Table(name = \"SUCURSAL\")\r\npublic class Sucursal {\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.IDENTITY)\r\n    private Long id;\r\n\r\n    private String nombre;\r\n    private String direccion;\r\n\r\n    @Column(name = \"latitud_centro\")\r\n    private Double latitudCentro;\r\n\r\n    @Column(name = \"longitud_centro\")\r\n    private Double longitudCentro;\r\n\r\n    @Column(name = \"radio_tolerancia_metros\")\r\n    private Integer radioToleranciaMetros;\r\n\r\n    @Column(name = \"EMPRESA_id\")\r\n    private Long empresaId;\r\n\r\n    public Sucursal(Long id, String nombre, Double latitudCentro, String direccion, Double longitudCentro, Integer radioToleranciaMetros, Long empresaId) {\r\n        this.id = id;\r\n        this.nombre = nombre;\r\n        this.latitudCentro = latitudCentro;\r\n        this.direccion = direccion;\r\n        this.longitudCentro = longitudCentro;\r\n        this.radioToleranciaMetros = radioToleranciaMetros;\r\n        this.empresaId = empresaId;\r\n    }\r\n\r\n    public Long getId() {\r\n        return id;\r\n    }\r\n\r\n    public void setId(Long id) {\r\n        this.id = id;\r\n    }\r\n\r\n    public String getNombre() {\r\n        return nombre;\r\n    }\r\n\r\n    public void setNombre(String nombre) {\r\n        this.nombre = nombre;\r\n    }\r\n\r\n    public String getDireccion() {\r\n        return direccion;\r\n    }\r\n\r\n    public void setDireccion(String direccion) {\r\n        this.direccion = direccion;\r\n    }\r\n\r\n    public Double getLatitudCentro() {\r\n        return latitudCentro;\r\n    }\r\n\r\n    public void setLatitudCentro(Double latitudCentro) {\r\n        this.latitudCentro = latitudCentro;\r\n    }\r\n\r\n    public Double getLongitudCentro() {\r\n        return longitudCentro;\r\n    }\r\n\r\n    public void setLongitudCentro(Double longitudCentro) {\r\n        this.longitudCentro = longitudCentro;\r\n    }\r\n\r\n    public Integer getRadioToleranciaMetros() {\r\n        return radioToleranciaMetros;\r\n    }\r\n\r\n    public void setRadioToleranciaMetros(Integer radioToleranciaMetros) {\r\n        this.radioToleranciaMetros = radioToleranciaMetros;\r\n    }\r\n\r\n    public Long getEmpresaId() {\r\n        return empresaId;\r\n    }\r\n\r\n    public void setEmpresaId(Long empresaId) {\r\n        this.empresaId = empresaId;\r\n    }\r\n}
+===================================================================
+diff --git a/sucursales/src/main/java/com/timetrack/sucursales/Model/Sucursal.java b/sucursales/src/main/java/com/timetrack/sucursales/Model/Sucursal.java
+--- a/sucursales/src/main/java/com/timetrack/sucursales/Model/Sucursal.java	(revision 75d0ec582c1186d9b36b2e0c922c1b86f126279e)
++++ b/sucursales/src/main/java/com/timetrack/sucursales/Model/Sucursal.java	(date 1778038506178)
+@@ -23,6 +23,8 @@
+     @Column(name = "EMPRESA_id")
+     private Long empresaId;
+ 
++    public Sucursal() {}
++
+     public Sucursal(Long id, String nombre, Double latitudCentro, String direccion, Double longitudCentro, Integer radioToleranciaMetros, Long empresaId) {
+         this.id = id;
+         this.nombre = nombre;
