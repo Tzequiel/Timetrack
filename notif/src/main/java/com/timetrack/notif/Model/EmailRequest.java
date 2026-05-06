@@ -1,8 +1,18 @@
 package com.timetrack.notif.Model;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+
 public class EmailRequest {
+    
+    @NotBlank(message = "El correo de destino es obligatorio")
+    @Email(message = "Debe ingresar un formato de correo electrónico válido")
     private String correoDestino;
+    
+    @NotBlank(message = "El asunto del correo es obligatorio")
     private String asunto;
+    
+    @NotBlank(message = "El mensaje del correo no puede estar vacío")
     private String mensaje;
 
     public String getCorreoDestino() {
