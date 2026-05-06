@@ -12,6 +12,4 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      # ESTA ES LA LÍNEA MÁGICA:
-      # Toma tu archivo init.sql y lo mete en la carpeta de auto-inicio de MySQL
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql

@@ -1,6 +1,3 @@
--- ==============================================================================
--- 1. TABLAS DE CATÁLOGO (Las que no dependen de nadie)
--- ==============================================================================
 
 CREATE TABLE ESTADO_SUSCRIPCION (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -16,10 +13,6 @@ CREATE TABLE TIPO_MARCAJE (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre_tipo_marcaje VARCHAR(50) NOT NULL
 );
-
--- ==============================================================================
--- 2. TABLAS PRINCIPALES (Con Multi-Tenant)
--- ==============================================================================
 
 CREATE TABLE EMPRESA (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -50,10 +43,6 @@ CREATE TABLE ROL (
     FOREIGN KEY (EMPRESA_id) REFERENCES EMPRESA(id) ON DELETE CASCADE
 );
 
--- ==============================================================================
--- 3. TABLA USUARIO
--- ==============================================================================
-
 CREATE TABLE USUARIO (
     id INT AUTO_INCREMENT PRIMARY KEY,
     rut VARCHAR(20) UNIQUE NOT NULL,
@@ -69,13 +58,10 @@ CREATE TABLE USUARIO (
     FOREIGN KEY (SUCURSAL_id) REFERENCES SUCURSAL(id)
 );
 
--- ==============================================================================
--- 4. TABLAS TRANSACCIONALES Y DE NEGOCIO
--- ==============================================================================
 
 CREATE TABLE BIOMETRIA (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    vector_facial LONGTEXT, -- LONGTEXT en MySQL es ideal para guardar el CLOB/JSON del rostro
+    vector_facial LONGTEXT, 
     fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     USUARIO_id INT NOT NULL UNIQUE,
     FOREIGN KEY (USUARIO_id) REFERENCES USUARIO(id) ON DELETE CASCADE
@@ -83,7 +69,7 @@ CREATE TABLE BIOMETRIA (
 
 CREATE TABLE HORARIO_TURNO (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    hora_entrada TIME NOT NULL, -- Cambiado de TIMESTAMP a TIME para guardar solo la hora (ej: 08:00:00)
+    hora_entrada TIME NOT NULL, 
     hora_salida TIME NOT NULL,
     USUARIO_id INT NOT NULL,
     DIA_SEMANA_id INT NOT NULL,
@@ -96,23 +82,19 @@ CREATE TABLE ASISTENCIA (
     fecha_hora_marcaje TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     latitud_marca DECIMAL(10,8),
     longitud_marca DECIMAL(11,8),
-    validacion_biometrica CHAR(1) DEFAULT '0', -- 1 o 0 (True/False)
-    validacion_gps CHAR(1) DEFAULT '0', -- 1 o 0 (True/False)
+    validacion_biometrica CHAR(1) DEFAULT '0', 
+    validacion_gps CHAR(1) DEFAULT '0', 
     USUARIO_id INT NOT NULL,
     TIPO_MARCAJE_id INT NOT NULL,
     FOREIGN KEY (USUARIO_id) REFERENCES USUARIO(id) ON DELETE CASCADE,
     FOREIGN KEY (TIPO_MARCAJE_id) REFERENCES TIPO_MARCAJE(id)
 );
 
--- ==============================================================================
--- 5. INSERCIÓN DE CATÁLOGOS BASE (Para que el Docker levante listo para usar)
--- ==============================================================================
 
--- Poblar Estados de Suscripción
 INSERT INTO ESTADO_SUSCRIPCION (nombre_estado) VALUES ('ACTIVO'), ('SUSPENDIDO'), ('PRUEBA_GRATIS');
 
--- Poblar Días de la Semana
+
 INSERT INTO DIA_SEMANA (nombre_dia_semana) VALUES ('LUNES'), ('MARTES'), ('MIÉRCOLES'), ('JUEVES'), ('VIERNES'), ('SÁBADO'), ('DOMINGO');
 
--- Poblar Tipos de Marcaje
+
 INSERT INTO TIPO_MARCAJE (nombre_tipo_marcaje) VALUES ('ENTRADA'), ('SALIDA'), ('INICIO_COLACION'), ('FIN_COLACION');
