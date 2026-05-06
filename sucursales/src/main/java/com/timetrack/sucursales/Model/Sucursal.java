@@ -1,25 +1,38 @@
 package com.timetrack.sucursales.Model;
+
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "SUCURSAL")
 public class Sucursal {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "El nombre de la sucursal es obligatorio")
     private String nombre;
+    
+    @NotBlank(message = "La dirección de la sucursal es obligatoria")
     private String direccion;
 
+    @NotNull(message = "La latitud del centro de la sucursal es obligatoria")
     @Column(name = "latitud_centro")
     private Double latitudCentro;
 
+    @NotNull(message = "La longitud del centro de la sucursal es obligatoria")
     @Column(name = "longitud_centro")
     private Double longitudCentro;
 
+    @NotNull(message = "El radio de tolerancia en metros es obligatorio")
+    @Min(value = 0, message = "El radio de tolerancia no puede ser negativo")
     @Column(name = "radio_tolerancia_metros")
     private Integer radioToleranciaMetros;
 
+    @NotNull(message = "El ID de la empresa es obligatorio")
     @Column(name = "EMPRESA_id")
     private Long empresaId;
 
