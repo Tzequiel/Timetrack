@@ -11,5 +11,27 @@ public class ReporteAsistenciaDTO {
         this.mensaje = mensaje;
     }
 
-    // ¡Genera Getters y Setters en IntelliJ!
+    public Long getUsuarioId() {
+        return usuarioId;
+    }
+
+    public void setUsuarioId(Long usuarioId) {
+        this.usuarioId = usuarioId;
+    }
+
+    public String getMensaje() {
+        return mensaje;
+    }
+
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
+    }
+
+    public int getTotalAsistencias() {
+        return totalAsistencias;
+    }
+
+    public void setTotalAsistencias(int totalAsistencias) {
+        this.totalAsistencias = totalAsistencias;
+    }
 }
