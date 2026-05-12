@@ -8,8 +8,5 @@ import java.util.List;
 
 @Repository
 public interface AsistenciaRepository extends JpaRepository<Asistencia, Long> {
-    
-    // Spring Boot es tan inteligente que si le pones este nombre al método,
-    // él solo crea la consulta: SELECT * FROM ASISTENCIA WHERE USUARIO_id = ?
     List<Asistencia> findByUsuarioId(Long usuarioId);
 }

@@ -10,6 +10,6 @@ services:
       MYSQL_USER: admin_timetrack
       MYSQL_PASSWORD: superpassword123
     ports:
-      - "3306:3306"
+      - "5506:5506"
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
