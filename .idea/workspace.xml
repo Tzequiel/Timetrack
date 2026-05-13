@@ -6,14 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="044333f1-404a-4281-9aea-6096706bd342" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attendance/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/attendance/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Repository/AsistenciaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Repository/AsistenciaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attendance/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/attendance/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/biometric/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/biometric/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/biometric/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/biometric/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/location/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/location/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintenance/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintenance/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manag/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/manag/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schedule/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/schedule/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schedule/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/schedule/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sucursales/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sucursales/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sucursales/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sucursales/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,10 +48,10 @@
     &quot;accountId&quot;: &quot;6b7689da-351d-408e-8791-819f34d07f22&quot;
   }
 }</component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1,
   &quot;fromUser&quot;: false
@@ -88,6 +89,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "run.configurations.included.in.services": "true",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
@@ -122,7 +126,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BiometricApplication">
+  <component name="RunManager" selected="Spring Boot.AttendanceApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Timetrack" />
       <method v="2">
