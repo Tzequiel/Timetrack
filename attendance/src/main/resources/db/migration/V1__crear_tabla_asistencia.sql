@@ -1,4 +1,4 @@
-CREATE TABLE ASISTENCIA (
+CREATE TABLE asistencia (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
     fecha_hora_marcaje DATETIME NOT NULL,
     latitud_marca DOUBLE NOT NULL,
