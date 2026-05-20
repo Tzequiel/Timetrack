@@ -1,4 +1,4 @@
-CREATE TABLE HORARIO_TURNO (
+CREATE TABLE horario_turno (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
     hora_entrada VARCHAR(10) NOT NULL,
     hora_salida VARCHAR(10) NOT NULL,
