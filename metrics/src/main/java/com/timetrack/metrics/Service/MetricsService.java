@@ -30,16 +30,13 @@ public class MetricsService {
         String mensaje = "";
 
         try {
-            // 1. Llamamos a attendance para traer el historial real
             List<AsistenciaDto> historial = attendanceClient.obtenerHistorialPorUsuario(usuarioId);
 
-            // 2. Contamos cuántas marcas tiene en total
             totalMarcasReales = historial.size();
 
             mensaje = "Resumen consolidado: El empleado tiene un total de " + totalMarcasReales + " registros de asistencia.";
 
         } catch (Exception e) {
-            // Si el microservicio attendance está apagado o falla
             mensaje = "Advertencia: No se pudo conectar con el sistema de asistencias para calcular el total real.";
         }
 
