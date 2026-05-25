@@ -3,6 +3,7 @@ package com.timetrack.attendance.Controller;
 import com.timetrack.attendance.Model.Asistencia;
 import com.timetrack.attendance.Service.AsistenciaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,11 +17,17 @@ public class AsistenciaController {
     private AsistenciaService asistenciaService;
 
     @PostMapping("/clock-in")
-    public ResponseEntity<Asistencia> clockIn(@RequestBody Asistencia asistencia) {
-        Asistencia resultado = asistenciaService.registrarMarcaje(asistencia, 1L);
-        return ResponseEntity.ok(resultado);
+    public ResponseEntity<?> clockIn(@RequestBody Asistencia asistencia) {
+        try {
+            Asistencia resultado = asistenciaService.registrarMarcaje(asistencia, 1L);
+            return ResponseEntity.ok(resultado);
+        } catch (RuntimeException e) {
+            if (e.getMessage().contains("Marcaje rechazado")) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+            }
+            throw e;
+        }
     }
-
     @PostMapping("/clock-out")
     public ResponseEntity<Asistencia> clockOut(@RequestBody Asistencia asistencia) {
         Asistencia resultado = asistenciaService.registrarMarcaje(asistencia, 2L);

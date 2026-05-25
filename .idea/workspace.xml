@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="044333f1-404a-4281-9aea-6096706bd342" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manag/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/manag/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metrics/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/metrics/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notif/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/notif/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Controller/AsistenciaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Controller/AsistenciaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Model/Asistencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Model/Asistencia.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +135,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SucursalesApplication">
+  <component name="RunManager" selected="Spring Boot.AttendanceApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Timetrack" />
       <method v="2">
@@ -249,7 +248,7 @@
       <workItem from="1778039325203" duration="1459000" />
       <workItem from="1778603433917" duration="3258000" />
       <workItem from="1779680487590" duration="12220000" />
-      <workItem from="1779720830555" duration="3711000" />
+      <workItem from="1779720830555" duration="12384000" />
     </task>
     <servers />
   </component>
