@@ -7,7 +7,7 @@ import jakarta.validation.constraints.NotNull;
 @Entity
 @Table(name = "HORARIO_TURNO")
 public class HorarioTurno {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

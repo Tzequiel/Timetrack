@@ -1,0 +1,8 @@
+CREATE TABLE notificacion_log (
+id BIGINT PRIMARY KEY AUTO_INCREMENT,
+usuario_id BIGINT NOT NULL,
+correo_destino VARCHAR(255) NOT NULL,
+asunto VARCHAR(255) NOT NULL,
+mensaje TEXT NOT NULL,
+fecha_envio DATETIME NOT NULL
+);
