@@ -1,4 +1,5 @@
 package com.timetrack.sucursales.Controller;
+
 import com.timetrack.sucursales.Model.Sucursal;
 import com.timetrack.sucursales.Service.SucursalService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,5 +20,10 @@ public class SucursalController {
     @GetMapping
     public List<Sucursal> verTodas() {
         return sucursalService.listarTodas();
+    }
+
+    @PutMapping("/{branchId}")
+    public Sucursal actualizarSucursal(@PathVariable Long branchId, @RequestBody Sucursal sucursalDetalles) {
+        return sucursalService.actualizar(branchId, sucursalDetalles);
     }
 }

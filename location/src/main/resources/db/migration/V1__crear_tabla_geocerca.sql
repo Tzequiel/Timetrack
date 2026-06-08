@@ -1,0 +1,7 @@
+CREATE TABLE geocerca (
+id BIGINT PRIMARY KEY AUTO_INCREMENT,
+sucursal_id BIGINT NOT NULL UNIQUE,
+latitud DOUBLE NOT NULL,
+longitud DOUBLE NOT NULL,
+radio_metros DOUBLE NOT NULL
+);

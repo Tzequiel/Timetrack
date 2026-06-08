@@ -1,0 +1,7 @@
+CREATE TABLE reporte_exportado (
+id BIGINT PRIMARY KEY AUTO_INCREMENT,
+tipo_reporte VARCHAR(50) NOT NULL,
+periodo VARCHAR(100) NOT NULL,
+fecha_exportacion DATETIME NOT NULL,
+estado VARCHAR(50) NOT NULL
+);

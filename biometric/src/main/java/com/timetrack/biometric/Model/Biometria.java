@@ -1,29 +1,31 @@
 package com.timetrack.biometric.Model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "BIOMETRIA")
 public class Biometria {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    @NotBlank(message = "El vector facial es obligatorio y no puede estar vacío")
+
     @Column(name = "vector_facial")
-    private String vectorFacial; 
-    
+    private String vectorFacial;
+
+    @Column(name = "huella_dactilar")
+    private String huellaDactilar;
+
     @NotNull(message = "La fecha de registro es obligatoria")
     @Column(name = "fecha_registro")
     private LocalDateTime fechaRegistro;
-    
+
     @NotNull(message = "El ID del usuario es obligatorio")
     @Column(name = "USUARIO_id")
     private Long usuarioId;
+
 
     public Long getId() {
         return id;
@@ -39,6 +41,14 @@ public class Biometria {
 
     public void setVectorFacial(String vectorFacial) {
         this.vectorFacial = vectorFacial;
+    }
+
+    public String getHuellaDactilar() {
+        return huellaDactilar;
+    }
+
+    public void setHuellaDactilar(String huellaDactilar) {
+        this.huellaDactilar = huellaDactilar;
     }
 
     public LocalDateTime getFechaRegistro() {

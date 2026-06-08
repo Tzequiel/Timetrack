@@ -1,4 +1,4 @@
-CREATE TABLE BIOMETRIA (
+CREATE TABLE biometria (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
     vector_facial TEXT NOT NULL,
     fecha_registro DATETIME NOT NULL,

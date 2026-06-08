@@ -1,4 +1,5 @@
 package com.timetrack.schedule.Service;
+
 import com.timetrack.schedule.Model.HorarioTurno;
 import com.timetrack.schedule.Repository.HorarioTurnoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import java.util.List;
 
 @Service
 public class HorarioTurnoService {
+
     @Autowired
     private HorarioTurnoRepository horarioRepository;
 
@@ -16,5 +18,17 @@ public class HorarioTurnoService {
 
     public List<HorarioTurno> buscarPorUsuario(Long usuarioId) {
         return horarioRepository.findByUsuarioId(usuarioId);
+    }
+
+    public HorarioTurno actualizar(Long id, HorarioTurno horarioDetalles) {
+        HorarioTurno horario = horarioRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Horario no encontrado con el ID: " + id));
+
+        horario.setHoraEntrada(horarioDetalles.getHoraEntrada());
+        horario.setHoraSalida(horarioDetalles.getHoraSalida());
+        horario.setUsuarioId(horarioDetalles.getUsuarioId());
+        horario.setDiaSemanaId(horarioDetalles.getDiaSemanaId());
+
+        return horarioRepository.save(horario);
     }
 }
