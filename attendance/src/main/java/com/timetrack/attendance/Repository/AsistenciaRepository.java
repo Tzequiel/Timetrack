@@ -8,7 +8,5 @@ import java.util.List;
 
 @Repository
 public interface AsistenciaRepository extends JpaRepository<Asistencia, Long> {
-    
-
     List<Asistencia> findByUsuarioId(Long usuarioId);
 }

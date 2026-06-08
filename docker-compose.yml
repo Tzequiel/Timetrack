@@ -1,5 +1,4 @@
 version: '3.8'
-
 services:
   timetrack-db:
     image: mysql:8.0
@@ -10,6 +9,4 @@ services:
       MYSQL_USER: admin_timetrack
       MYSQL_PASSWORD: superpassword123
     ports:
-      - "3306:3306"
-    volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - "5506:3306"

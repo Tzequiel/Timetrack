@@ -27,11 +27,11 @@ public class Asistencia {
     private Double longitudMarca;
 
     @NotBlank(message = "El estado de validación biométrica no puede estar en blanco")
-    @Column(name = "validacion_biometrica")
+    @Column(name = "validacion_biometrica",length = 255 )
     private String validacionBiometrica;
 
     @NotBlank(message = "El estado de validación GPS no puede estar en blanco")
-    @Column(name = "validacion_gps")
+    @Column(name = "validacion_gps", length = 255)
     private String validacionGps;
 
     @NotNull(message = "El ID del usuario es obligatorio")
