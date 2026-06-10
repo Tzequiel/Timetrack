@@ -31,4 +31,18 @@ public class HorarioTurnoService {
 
         return horarioRepository.save(horario);
     }
+    public List<HorarioTurno> obtenerTodos() {
+        return horarioRepository.findAll();
+    }
+
+    public HorarioTurno obtenerPorId(Long id) {
+        return horarioRepository.findById(id).orElse(null);
+    }
+
+    public void eliminar(Long id) {
+        if (!horarioRepository.existsById(id)) {
+            throw new RuntimeException("Horario no encontrado con el ID: " + id);
+        }
+        horarioRepository.deleteById(id);
+    }
 }
