@@ -26,7 +26,6 @@ public class AsistenciaService {
     private LocationClient locationClient;
 
     public Asistencia registrarMarcaje(Asistencia nuevaAsistencia, Long tipoMarcajeId) {
-
         UsuarioDto empleado;
 
         // 1. valida usuario en manag
@@ -56,7 +55,6 @@ public class AsistenciaService {
         nuevaAsistencia.setFechaHoraMarcaje(LocalDateTime.now());
         nuevaAsistencia.setTipoMarcajeId(tipoMarcajeId);
 
-        // (La validación biométrica la dejaremos pendiente por ahora hasta integrar ese flujo)
         if (nuevaAsistencia.getValidacionBiometrica() == null) {
             nuevaAsistencia.setValidacionBiometrica("PENDIENTE");
         }
@@ -70,5 +68,29 @@ public class AsistenciaService {
 
     public List<Asistencia> obtenerMarcajesPorEmpleado(Long usuarioId) {
         return asistenciaRepository.findByUsuarioId(usuarioId);
+    }
+
+    public Asistencia obtenerPorId(Long id) {
+        return asistenciaRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Error: El marcaje de asistencia con ID " + id + " no existe."));
+    }
+
+    public Asistencia actualizar(Long id, Asistencia detalles) {
+        Asistencia asistencia = obtenerPorId(id);
+
+        asistencia.setFechaHoraMarcaje(detalles.getFechaHoraMarcaje());
+        asistencia.setLatitudMarca(detalles.getLatitudMarca());
+        asistencia.setLongitudMarca(detalles.getLongitudMarca());
+        asistencia.setValidacionBiometrica(detalles.getValidacionBiometrica());
+        asistencia.setValidacionGps(detalles.getValidacionGps());
+        asistencia.setUsuarioId(detalles.getUsuarioId());
+        asistencia.setTipoMarcajeId(detalles.getTipoMarcajeId());
+
+        return asistenciaRepository.save(asistencia);
+    }
+
+    public void eliminar(Long id) {
+        Asistencia asistencia = obtenerPorId(id);
+        asistenciaRepository.delete(asistencia);
     }
 }

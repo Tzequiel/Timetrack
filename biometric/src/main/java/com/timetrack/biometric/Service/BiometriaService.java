@@ -5,6 +5,7 @@ import com.timetrack.biometric.Repository.BiometriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class BiometriaService {
@@ -12,6 +13,7 @@ public class BiometriaService {
     @Autowired
     private BiometriaRepository biometriaRepository;
 
+    // Métodos existentes de registro y verificación
     public Biometria registrarRostro(Long usuarioId, String vectorFacial) {
         Biometria biometria = biometriaRepository.findByUsuarioId(usuarioId);
         if (biometria == null) {
@@ -48,5 +50,27 @@ public class BiometriaService {
             return bd.getHuellaDactilar().equals(huellaPostman);
         }
         return false;
+    }
+
+    public List<Biometria> obtenerTodas() {
+        return biometriaRepository.findAll();
+    }
+
+    public Biometria obtenerPorId(Long id) {
+        return biometriaRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Error: El registro biométrico con ID " + id + " no existe."));
+    }
+
+    public Biometria obtenerPorUsuarioId(Long usuarioId) {
+        Biometria biometria = biometriaRepository.findByUsuarioId(usuarioId);
+        if (biometria == null) {
+            throw new RuntimeException("Error: No se encontraron registros biométricos para el usuario con ID " + usuarioId);
+        }
+        return biometria;
+    }
+
+    public void eliminar(Long id) {
+        Biometria biometria = obtenerPorId(id);
+        biometriaRepository.delete(biometria);
     }
 }

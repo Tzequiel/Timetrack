@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/attendance")
-public class AsistenciaController {
+public class AsistenciaController { // Nota: Mantén el nombre original de tu clase 'AsistenciaController'
 
     @Autowired
     private AsistenciaService asistenciaService;
@@ -28,6 +28,7 @@ public class AsistenciaController {
             throw e;
         }
     }
+
     @PostMapping("/clock-out")
     public ResponseEntity<Asistencia> clockOut(@RequestBody Asistencia asistencia) {
         Asistencia resultado = asistenciaService.registrarMarcaje(asistencia, 2L);
@@ -50,5 +51,26 @@ public class AsistenciaController {
     public ResponseEntity<List<Asistencia>> getHistoryByUserId(@PathVariable Long userId) {
         List<Asistencia> historial = asistenciaService.obtenerMarcajesPorEmpleado(userId);
         return ResponseEntity.ok(historial);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Asistencia>> verTodos() {
+        return ResponseEntity.ok(asistenciaService.obtenerTodosLosMarcajes());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Asistencia> verPorId(@PathVariable Long id) {
+        return ResponseEntity.ok(asistenciaService.obtenerPorId(id));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Asistencia> actualizar(@PathVariable Long id, @RequestBody Asistencia detalles) {
+        return ResponseEntity.ok(asistenciaService.actualizar(id, detalles));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> eliminar(@PathVariable Long id) {
+        asistenciaService.eliminar(id);
+        return ResponseEntity.ok("Marcaje de asistencia eliminado correctamente");
     }
 }

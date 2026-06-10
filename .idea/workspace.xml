@@ -6,6 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="044333f1-404a-4281-9aea-6096706bd342" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Controller/AsistenciaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Controller/AsistenciaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Service/AsistenciaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Service/AsistenciaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Controller/BiometriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Controller/BiometriaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Service/BiometriaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Service/BiometriaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Controller/LocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Controller/LocationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Service/LocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Service/LocationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="AuthController" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,12 +42,12 @@
     &quot;assignee&quot;: &quot;K4USTIC&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Tzequiel/Timetrack.git",
-    "accountId": "c3b5a773-0a8d-4e31-9040-cdebf013684c"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Tzequiel/Timetrack.git&quot;,
+    &quot;accountId&quot;: &quot;c3b5a773-0a8d-4e31-9040-cdebf013684c&quot;
   }
-}]]></component>
+}</component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -69,7 +77,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "AuthController2",
+    "git-widget-placeholder": "primeras-4",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
