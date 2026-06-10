@@ -3,6 +3,8 @@ package com.timetrack.schedule.Controller;
 
 import com.timetrack.schedule.Dto.LoginJWTDTO;
 import com.timetrack.schedule.Dto.ResponseDTO;
+import com.timetrack.schedule.Service.AuthService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

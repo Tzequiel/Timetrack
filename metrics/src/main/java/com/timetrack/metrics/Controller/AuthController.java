@@ -3,6 +3,8 @@ package com.timetrack.metrics.Controller;
 
 import com.timetrack.metrics.Dto.LoginJWTDTO;
 import com.timetrack.metrics.Dto.ResponseDTO;
+import com.timetrack.metrics.Service.AuthService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
