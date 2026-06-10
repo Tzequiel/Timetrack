@@ -5,27 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="044333f1-404a-4281-9aea-6096706bd342" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Dto/LoginJWTDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Dto/ResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Dto/LoginJWTDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Dto/ResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Dto/LoginJWTDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Dto/ResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Dto/LoginJWTDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Dto/ResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maintenance/src/main/java/com/timetrack/maintenance/Dto/LoginJWTDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maintenance/src/main/java/com/timetrack/maintenance/Dto/ResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manag/src/main/java/com/timetrack/manag/Dto/LoginJWTDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manag/src/main/java/com/timetrack/manag/Dto/ResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/metrics/src/main/java/com/timetrack/metrics/Dto/LoginJWTDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/metrics/src/main/java/com/timetrack/metrics/Dto/ResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notif/src/main/java/com/timetrack/notif/Dto/LoginJWTDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notif/src/main/java/com/timetrack/notif/Dto/ResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schedule/src/main/java/com/timetrack/schedule/Dto/LoginJWTDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schedule/src/main/java/com/timetrack/schedule/Dto/ResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sucursales/src/main/java/com/timetrack/sucursales/Dto/LoginJWTDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sucursales/src/main/java/com/timetrack/sucursales/Dto/ResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Assemblers/AttendanceModelAssambler.java" beforeDir="false" afterPath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Assemblers/AttendanceModelAssambler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,11 +69,11 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "Dtos-de-autentificacion",
+    "git-widget-placeholder": "Assemblers",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/W608-PCXX/Desktop/Timetrck/Timetrack/pom.xml",
+    "last_opened_file_path": "C:/Users/W608-PCXX/Desktop/eaeaeae/hospital-microservicios/tipoUsuario/pom.xml",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -219,6 +199,7 @@
       <workItem from="1778039325203" duration="1459000" />
       <workItem from="1780949925397" duration="1114000" />
       <workItem from="1781022922712" duration="1161000" />
+      <workItem from="1781095382799" duration="302000" />
     </task>
     <servers />
   </component>

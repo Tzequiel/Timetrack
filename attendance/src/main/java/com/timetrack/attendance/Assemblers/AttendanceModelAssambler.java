@@ -15,8 +15,8 @@ public class AttendanceModelAssambler implements RepresentationModelAssembler<As
     public EntityModel<Asistencia> toModel(Asistencia entity) {
         // listamos las rutas GET que tenemos
         return EntityModel.of(entity,
-                linkTo(methodOn(Asistencia.class).buscarPorId(entity.getId())).withSelfRel(),
-                linkTo(methodOn(Asistencia.class).buscarTodos()).withRel("tipos-usuario")
+                linkTo(methodOn(AsistenciaController.class).getHistoryByUserId(entity.getId())).withSelfRel(),
+                linkTo(methodOn(AsistenciaController.class).buscarTodos()).withRel("tipos-usuario")
         );
     }
 }
