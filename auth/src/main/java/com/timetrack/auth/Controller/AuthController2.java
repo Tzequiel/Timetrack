@@ -2,6 +2,7 @@ package com.timetrack.auth.Controller;
 
 import com.timetrack.auth.Dto.LoginJWTDTO;
 import com.timetrack.auth.Dto.ResponseDTO;
+import com.timetrack.auth.Service.AuthService2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

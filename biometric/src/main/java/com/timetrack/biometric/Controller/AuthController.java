@@ -3,6 +3,7 @@ package com.timetrack.biometric.Controller;
 
 import com.timetrack.biometric.Dto.LoginJWTDTO;
 import com.timetrack.biometric.Dto.ResponseDTO;
+import com.timetrack.biometric.Service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
