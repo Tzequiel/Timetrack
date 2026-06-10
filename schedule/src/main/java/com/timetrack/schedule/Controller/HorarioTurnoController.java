@@ -28,4 +28,20 @@ public class HorarioTurnoController {
     public HorarioTurno actualizarHorario(@PathVariable Long scheduleId, @Valid @RequestBody HorarioTurno horario) {
         return horarioService.actualizar(scheduleId, horario);
     }
+    @GetMapping
+    public List<HorarioTurno> obtenerTodos() {
+        return horarioService.obtenerTodos();
+    }
+
+    // Obtener un turno específico por su ID
+    @GetMapping("/{scheduleId}")
+    public HorarioTurno obtenerPorId(@PathVariable Long scheduleId) {
+        return horarioService.obtenerPorId(scheduleId);
+    }
+
+    // Eliminar un turno por su ID
+    @DeleteMapping("/{scheduleId}")
+    public void eliminarHorario(@PathVariable Long scheduleId) {
+        horarioService.eliminar(scheduleId);
+    }
 }

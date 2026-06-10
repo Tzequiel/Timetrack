@@ -32,4 +32,14 @@ public class SucursalService {
         }
         return null;
     }
+    public Sucursal obtenerPorId(Long id) {
+        return sucursalRepository.findById(id).orElse(null);
+    }
+
+    // Eliminar una sucursal por su ID
+    public void eliminar(Long id) {
+        if (sucursalRepository.existsById(id)) {
+            sucursalRepository.deleteById(id);
+        }
+    }
 }

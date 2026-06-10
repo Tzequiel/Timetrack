@@ -34,4 +34,20 @@ public class NotificacionService {
     public List<NotificacionLog> obtenerLogsPorUsuario(Long usuarioId) {
         return logRepository.findByUsuarioId(usuarioId);
     }
+    public List<EmailRequest> obtenerTodas() {
+        return null;
+    }
+
+    public EmailRequest obtenerPorId(Long id) {
+        return null;
+    }
+
+    public EmailRequest actualizar(Long id, EmailRequest request) {
+
+        return null;
+    }
+
+    public boolean eliminar(Long id) {
+        return false;
+    }
 }
