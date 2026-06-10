@@ -6,6 +6,7 @@ import com.timetrack.auth.Repository.AuthRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -14,25 +15,46 @@ public class AuthService {
     @Autowired
     private AuthRepository authRepository;
 
+    // Lógica existente de Login/Auth
     public String validarLogin(LoginRequest request) {
         UsuarioAuth usuario = authRepository.findByEmail(request.getEmail());
         if (usuario != null && usuario.getPasswordHash().equals(request.getPassword())) {
-            // Simulamos la creación de un Token (En un entorno real aquí generarías un JWT)
-            String token = UUID.randomUUID().toString();
-            return token;
+            return UUID.randomUUID().toString();
         }
         return null;
     }
 
     public String logout(String token) {
-        // En una implementación real con JWT, aquí se agregaría el token a una "lista negra"
-        // o se eliminaría la sesión en caché (ej. Redis).
         return "Logout exitoso. El token ha sido invalidado.";
     }
 
     public boolean validateToken(String token) {
-        // Aquí iría la lógica real para validar la firma y expiración de un JWT.
-        // Por ahora simularemos que es válido siempre que nos envíen un texto que no esté vacío.
-        return token != null && !token.trim().isEmpty() && token.length() > 10;
+        return token != null && !token.trim().isEmpty();
+    }
+
+    public UsuarioAuth registrarUsuario(UsuarioAuth nuevoUsuario) {
+        // Aquí podrías aplicar un hash a la contraseña en el futuro
+        return authRepository.save(nuevoUsuario);
+    }
+
+    public List<UsuarioAuth> obtenerTodos() {
+        return authRepository.findAll();
+    }
+
+    public UsuarioAuth obtenerPorId(Long id) {
+        return authRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Error: El usuario de autenticación con ID " + id + " no existe."));
+    }
+
+    public UsuarioAuth actualizar(Long id, UsuarioAuth detalles) {
+        UsuarioAuth usuario = obtenerPorId(id);
+        usuario.setEmail(detalles.getEmail());
+        usuario.setPasswordHash(detalles.getPasswordHash()); // En el futuro, aquí se encriptaría
+        return authRepository.save(usuario);
+    }
+
+    public void eliminar(Long id) {
+        UsuarioAuth usuario = obtenerPorId(id);
+        authRepository.delete(usuario);
     }
 }
