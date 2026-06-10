@@ -31,4 +31,31 @@ public class LogAuditoriaController {
         }
         return ResponseEntity.ok(logs);
     }
+
+    @GetMapping("/logs/{id}")
+    public ResponseEntity<LogAuditoria> verPorId(@PathVariable Long id) {
+        return logService.buscarPorId(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @PutMapping("/logs/{id}")
+    public ResponseEntity<?> actualizarLog(@PathVariable Long id, @Valid @RequestBody LogAuditoria log) {
+        try {
+            LogAuditoria actualizado = logService.actualizar(id, log);
+            return ResponseEntity.ok(actualizado);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error: " + e.getMessage());
+        }
+    }
+
+    @DeleteMapping("/logs/{id}")
+    public ResponseEntity<String> eliminarLog(@PathVariable Long id) {
+        try {
+            logService.eliminar(id);
+            return ResponseEntity.ok("Log de auditoría eliminado correctamente.");
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error: " + e.getMessage());
+        }
+    }
 }

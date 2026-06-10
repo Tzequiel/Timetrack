@@ -27,7 +27,6 @@ public class UsuarioService {
         return usuarioRepository.findAll();
     }
 
-
     public Optional<Usuario> buscarPorId(Long id) {
         return usuarioRepository.findById(id);
     }
@@ -59,5 +58,12 @@ public class UsuarioService {
             throw new IllegalArgumentException("El rol '" + roleName + "' no es válido. Intente con 'admin' o 'empleado'.");
         }
         return usuarioRepository.findByRolId(idBuscado);
+    }
+
+    public void eliminar(Long id) {
+        if (!usuarioRepository.existsById(id)) {
+            throw new RuntimeException("No se pudo eliminar. Usuario no encontrado con el ID: " + id);
+        }
+        usuarioRepository.deleteById(id);
     }
 }
