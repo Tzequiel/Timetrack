@@ -26,4 +26,13 @@ public class SucursalController {
     public Sucursal actualizarSucursal(@PathVariable Long branchId, @RequestBody Sucursal sucursalDetalles) {
         return sucursalService.actualizar(branchId, sucursalDetalles);
     }
+    @GetMapping("/{branchId}")
+    public Sucursal obtenerPorId(@PathVariable Long branchId) {
+        return sucursalService.obtenerPorId(branchId);
+    }
+
+    @DeleteMapping("/{branchId}")
+    public void eliminarSucursal(@PathVariable Long branchId) {
+        sucursalService.eliminar(branchId);
+    }
 }
