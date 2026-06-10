@@ -26,6 +26,15 @@ public class UsuarioController {
         }
     }
 
+    @GetMapping
+    public ResponseEntity<List<Usuario>> verTodos() {
+        List<Usuario> usuarios = usuarioService.listarTodos();
+        if (usuarios.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(usuarios);
+    }
+
     @GetMapping("/{userId}")
     public ResponseEntity<Usuario> verPorId(@PathVariable Long userId) {
         return usuarioService.buscarPorId(userId)
@@ -53,6 +62,16 @@ public class UsuarioController {
             return ResponseEntity.ok(usuarios);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error: " + e.getMessage());
+        }
+    }
+
+    @DeleteMapping("/{userId}")
+    public ResponseEntity<String> eliminarUsuario(@PathVariable Long userId) {
+        try {
+            usuarioService.eliminar(userId);
+            return ResponseEntity.ok("Usuario eliminado correctamente.");
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error: " + e.getMessage());
         }
     }
 }

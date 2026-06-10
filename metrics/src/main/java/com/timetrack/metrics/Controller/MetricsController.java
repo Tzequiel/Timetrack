@@ -20,14 +20,13 @@ public class MetricsController {
     @Autowired
     private MetricsService metricsService;
 
-    // 1. GET /api/reports/monthly-summary/{userId}
+
     @GetMapping("/monthly-summary/{userId}")
     public ResponseEntity<ReporteAsistenciaDTO> obtenerResumenMensual(@PathVariable Long userId) {
         ReporteAsistenciaDTO resumen = metricsService.generarResumenMensual(userId);
         return ResponseEntity.ok(resumen);
     }
 
-    // 2. GET /api/reports/daily-absences
     @GetMapping("/daily-absences")
     public ResponseEntity<List<AusenciaDiariaDTO>> obtenerAusenciasDiarias() {
         List<AusenciaDiariaDTO> ausencias = metricsService.obtenerAusenciasDelDia();
@@ -37,7 +36,7 @@ public class MetricsController {
         return ResponseEntity.ok(ausencias);
     }
 
-    // 3. POST /api/reports/export
+
     @PostMapping("/export")
     public ResponseEntity<?> exportarReporte(@Valid @RequestBody ExportRequestDTO exportRequest) {
         try {
@@ -45,6 +44,42 @@ public class MetricsController {
             return ResponseEntity.status(HttpStatus.CREATED).body(transaccion);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error en exportación: " + e.getMessage());
+        }
+    }
+
+    @GetMapping("/export")
+    public ResponseEntity<List<ReporteExportado>> verHistorialExportaciones() {
+        List<ReporteExportado> exportaciones = metricsService.listarExportaciones();
+        if (exportaciones.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(exportaciones);
+    }
+
+    @GetMapping("/export/{id}")
+    public ResponseEntity<ReporteExportado> verExportacionPorId(@PathVariable Long id) {
+        return metricsService.buscarExportacionPorId(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @PutMapping("/export/{id}")
+    public ResponseEntity<?> actualizarRegistroExportacion(@PathVariable Long id, @Valid @RequestBody ReporteExportado reporte) {
+        try {
+            ReporteExportado actualizado = metricsService.actualizarExportacion(id, reporte);
+            return ResponseEntity.ok(actualizado);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error: " + e.getMessage());
+        }
+    }
+
+    @DeleteMapping("/export/{id}")
+    public ResponseEntity<String> eliminarRegistroExportacion(@PathVariable Long id) {
+        try {
+            metricsService.eliminarExportacion(id);
+            return ResponseEntity.ok("Registro de exportación eliminado correctamente.");
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error: " + e.getMessage());
         }
     }
 }
