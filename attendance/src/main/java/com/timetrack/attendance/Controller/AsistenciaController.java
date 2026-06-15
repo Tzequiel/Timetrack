@@ -51,4 +51,25 @@ public class AsistenciaController {
         List<Asistencia> historial = asistenciaService.obtenerMarcajesPorEmpleado(userId);
         return ResponseEntity.ok(historial);
     }
+
+    @GetMapping
+    public ResponseEntity<List<Asistencia>> verTodos() {
+        return ResponseEntity.ok(asistenciaService.obtenerTodosLosMarcajes());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Asistencia> verPorId(@PathVariable Long id) {
+        return ResponseEntity.ok(asistenciaService.obtenerPorId(id));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Asistencia> actualizar(@PathVariable Long id, @RequestBody Asistencia detalles) {
+        return ResponseEntity.ok(asistenciaService.actualizar(id, detalles));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> eliminar(@PathVariable Long id) {
+        asistenciaService.eliminar(id);
+        return ResponseEntity.ok("Marcaje de asistencia eliminado correctamente");
+    }
 }

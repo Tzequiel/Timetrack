@@ -6,6 +6,8 @@ import com.timetrack.location.Repository.GeocercaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class LocationService {
 
@@ -53,5 +55,34 @@ public class LocationService {
                 * Math.sin(lonDistance / 2) * Math.sin(lonDistance / 2);
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
         return R * c;
+    }
+
+    public List<Geocerca> obtenerTodas() {
+        return geocercaRepository.findAll();
+    }
+
+    public Geocerca obtenerPorId(Long id) {
+        return geocercaRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Error: Geocerca no encontrada con ID: " + id));
+    }
+
+    public Geocerca actualizarGeocerca(Long id, Geocerca detalles) {
+        Geocerca existente = obtenerPorId(id);
+
+        existente.setLatitud(detalles.getLatitud());
+        existente.setLongitud(detalles.getLongitud());
+        existente.setRadioMetros(detalles.getRadioMetros());
+
+        // Se asume que Geocerca cuenta con el setter estándar para la sucursal
+        if (detalles.getSucursalId() != null) {
+            existente.setSucursalId(detalles.getSucursalId());
+        }
+
+        return geocercaRepository.save(existente);
+    }
+
+    public void eliminarGeocerca(Long id) {
+        Geocerca existente = obtenerPorId(id);
+        geocercaRepository.delete(existente);
     }
 }
