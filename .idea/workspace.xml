@@ -6,14 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="044333f1-404a-4281-9aea-6096706bd342" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Controller/AsistenciaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Controller/AsistenciaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Service/AsistenciaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Service/AsistenciaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Controller/BiometriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Controller/BiometriaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Service/BiometriaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Service/BiometriaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Controller/LocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Controller/LocationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Service/LocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Service/LocationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,11 +69,11 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "primeras-4",
+    "git-widget-placeholder": "junitmockito",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/W608-PCXX/Desktop/Timetrck/Timetrack/pom.xml",
+    "last_opened_file_path": "C:/Users/W608-PCXX/Desktop/time/Timetrack",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -105,7 +97,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.AttendanceApplication">
+  <component name="RunManager">
     <configuration name="AttendanceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="attendance" />
@@ -186,14 +178,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

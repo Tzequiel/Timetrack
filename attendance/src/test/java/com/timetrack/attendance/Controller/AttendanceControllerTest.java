@@ -17,7 +17,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import com.timetrack.attendance.Model.Asistencia;
 import com.timetrack.attendance.Service.AsistenciaService;
 
-@org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest(AsistenciaController.class)
+@org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest(AsistenciaController.class)
 public class AttendanceControllerTest {
 
     @Autowired
