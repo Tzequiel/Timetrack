@@ -53,15 +53,15 @@ Se implementó una rigurosa cobertura de pruebas utilizando **JUnit 5, MockMvc y
 
 ## 4. Convenciones de Desarrollo Colaborativo
 
-### 4.1 Estrategia de Ramificación (GitFlow)
-Adoptamos GitFlow por su estructura y rigidez, ideal para proteger el código de producción.
+### 4.1 Estrategia de Ramificación
+Adoptamos un modelo de trabajo flexible y dinámico (*Feature Branching*). En lugar de usar una estructura rígida, fuimos creando ramas a medida que surgían nuevas tareas, funcionalidades o correcciones. Esto nos permitió trabajar en paralelo manteniendo el repositorio organizado bajo el siguiente formato:
 
 | Tipo de Rama | Prefijo | Ejemplo |
 | :--- | :--- | :--- |
-| **Producción** | `main` | `main` |
+| **Código Estable** | `main` | `main` |
 | **Integración** | `develop` | `develop` |
-| **Funcionalidades** | `feature/` | `feature/api-endpoints` |
-| **Correcciones** | `hotfix/` | `hotfix/connection-timeout` |
+| **Nuevas Funcionalidades** | `feature/` | `feature/api-endpoints` |
+| **Correcciones** | `hotfix/` o `fix/` | `hotfix/connection-timeout` |
 
 ### 4.2 Estándar de Commits (Semantic Commits)
 * **`feat:`** Una nueva característica (Ej: `feat: implement login controller`).
@@ -71,7 +71,7 @@ Adoptamos GitFlow por su estructura y rigidez, ideal para proteger el código de
 ### 4.3 Flujo de Revisión y Merge
 1. **Pull Requests (PR):** Prohibido el push directo a `main` o `develop`.
 2. **Revisión:** Aprobación obligatoria (Approve) por otro miembro del equipo.
-3. **Merge:** Ejecutado solo si las pruebas CI automáticas pasan con éxito.
+3. **Merge:** Ejecutado solo si las pruebas automáticas de CI pasan con éxito. Se realizaron diversos Merges con sus respectivos Pull Requests, integrando features a `develop`, hotfixes a `main` y un merge final consolidado hacia `main`.
 
 ---
 
@@ -93,7 +93,7 @@ El pipeline automatizado en GitHub Actions (`.github/workflows/ci.yml`) se ejecu
 * **Capa Runtime:** Extrae solo el artefacto final (`.jar`) a una imagen ligera basada en Alpine Linux (JRE), reduciendo drásticamente el peso y la superficie de ataque.
 
 ### 6.2 Despliegue Local (Docker Compose)
-Se utiliza `docker-compose.yml` para levantar la arquitectura completa en una red virtual.
+Se utiliza `docker-compose.yml` para levantar la arquitectura completa en una red virtual, garantizando su mantenibilidad, estabilidad (reinicio automático en caso de caída) y escalabilidad.
 * **Construir imagen:** `docker build -t timetrack-app:latest .`
 * **Iniciar entorno:** `docker compose up -d`
 * **Detener entorno:** `docker compose down`
