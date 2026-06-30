@@ -1,4 +1,4 @@
-package com.timetrack.attendance.logger;
+package com.timetrack.auth.logger;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
