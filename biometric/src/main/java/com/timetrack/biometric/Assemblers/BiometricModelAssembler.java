@@ -1,5 +1,6 @@
 package com.timetrack.biometric.Assemblers;
 
+import com.timetrack.biometric.Controller.BiometriaController;
 import com.timetrack.biometric.Model.Biometria;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;
@@ -7,7 +8,7 @@ import org.springframework.hateoas.server.RepresentationModelAssembler;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
-public class BiometricAssembler implements RepresentationModelAssembler<Biometria, EntityModel<Biometria>> {
+public class BiometricModelAssembler implements RepresentationModelAssembler<Biometria, EntityModel<Biometria>> {
     @Override
     public EntityModel<Biometria> toModel(Biometria entity) {
         // listamos las rutas GET que tenemos

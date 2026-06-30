@@ -8,8 +8,7 @@ import org.springframework.hateoas.server.RepresentationModelAssembler;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
-
-public class ManagAssembler implements RepresentationModelAssembler<Usuario, EntityModel<Usuario>> {
+public class ManagModelAssembler implements RepresentationModelAssembler<Usuario, EntityModel<Usuario>> {
     @Override
     public EntityModel<Usuario> toModel(Usuario entity) {
         // listamos las rutas GET que tenemos

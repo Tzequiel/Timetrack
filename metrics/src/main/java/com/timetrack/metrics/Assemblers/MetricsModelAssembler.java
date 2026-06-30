@@ -9,8 +9,7 @@ import org.springframework.hateoas.server.RepresentationModelAssembler;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
-
-public class MetricsAssembler implements RepresentationModelAssembler<ReporteExportado, EntityModel<ReporteExportado>> {
+public class MetricsModelAssembler implements RepresentationModelAssembler<ReporteExportado, EntityModel<ReporteExportado>> {
     @Override
     public EntityModel<ReporteExportado> toModel(ReporteExportado entity) {
         // listamos las rutas GET que tenemos

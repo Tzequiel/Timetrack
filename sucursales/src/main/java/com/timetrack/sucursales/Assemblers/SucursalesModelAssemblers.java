@@ -7,7 +7,7 @@ import org.springframework.hateoas.server.RepresentationModelAssembler;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
-public class SucursalesAssemblers implements RepresentationModelAssembler<Sucursal, EntityModel<Sucursal>> {
+public class SucursalesModelAssemblers implements RepresentationModelAssembler<Sucursal, EntityModel<Sucursal>> {
     @Override
     public EntityModel<Sucursal> toModel(Sucursal entity) {
         // listamos las rutas GET que tenemos

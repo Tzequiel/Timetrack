@@ -8,7 +8,7 @@ import org.springframework.hateoas.server.RepresentationModelAssembler;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
-public class NotifAssembler implements RepresentationModelAssembler<NotificacionLog, EntityModel<NotificacionLog>> {
+public class NotifModelAssembler implements RepresentationModelAssembler<NotificacionLog, EntityModel<NotificacionLog>> {
     @Override
     public EntityModel<NotificacionLog> toModel(NotificacionLog entity) {
         // listamos las rutas GET que tenemos

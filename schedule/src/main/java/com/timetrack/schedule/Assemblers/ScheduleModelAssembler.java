@@ -8,7 +8,7 @@ import org.springframework.hateoas.server.RepresentationModelAssembler;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
-public class ScheduleAssembler implements RepresentationModelAssembler<HorarioTurno, EntityModel<HorarioTurno>> {
+public class ScheduleModelAssembler implements RepresentationModelAssembler<HorarioTurno, EntityModel<HorarioTurno>> {
     @Override
     public EntityModel<HorarioTurno> toModel(HorarioTurno entity) {
         // listamos las rutas GET que tenemos

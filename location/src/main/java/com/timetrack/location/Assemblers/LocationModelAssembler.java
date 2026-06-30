@@ -7,7 +7,7 @@ import org.springframework.hateoas.server.RepresentationModelAssembler;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
-public class LocationAssembler implements RepresentationModelAssembler<Geocerca, EntityModel<Geocerca>> {
+public class LocationModelAssembler implements RepresentationModelAssembler<Geocerca, EntityModel<Geocerca>> {
     @Override
     public EntityModel<Geocerca> toModel(Geocerca entity) {
         // listamos las rutas GET que tenemos
