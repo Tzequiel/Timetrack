@@ -1,5 +1,6 @@
 package com.timetrack.metrics.Controller;
 
+import com.timetrack.metrics.Assemblers.MetricsModelAssembler;
 import com.timetrack.metrics.Model.AusenciaDiariaDTO;
 import com.timetrack.metrics.Model.ExportRequestDTO;
 import com.timetrack.metrics.Model.ReporteAsistenciaDTO;
@@ -7,11 +8,17 @@ import com.timetrack.metrics.Model.ReporteExportado;
 import com.timetrack.metrics.Service.MetricsService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.CollectionModel;
+import org.springframework.hateoas.EntityModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController
 @RequestMapping("/api/reports")
@@ -20,6 +27,8 @@ public class MetricsController {
     @Autowired
     private MetricsService metricsService;
 
+    @Autowired
+    private MetricsModelAssembler assembler;
 
     @GetMapping("/monthly-summary/{userId}")
     public ResponseEntity<ReporteAsistenciaDTO> obtenerResumenMensual(@PathVariable Long userId) {
@@ -37,28 +46,25 @@ public class MetricsController {
     }
 
 
-    @PostMapping("/export")
-    public ResponseEntity<?> exportarReporte(@Valid @RequestBody ExportRequestDTO exportRequest) {
-        try {
-            ReporteExportado transaccion = metricsService.registrarYExportar(exportRequest);
-            return ResponseEntity.status(HttpStatus.CREATED).body(transaccion);
-        } catch (IllegalArgumentException e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error en exportación: " + e.getMessage());
-        }
-    }
-
     @GetMapping("/export")
-    public ResponseEntity<List<ReporteExportado>> verHistorialExportaciones() {
+    public ResponseEntity<CollectionModel<EntityModel<ReporteExportado>>> verHistorialExportaciones() {
         List<ReporteExportado> exportaciones = metricsService.listarExportaciones();
         if (exportaciones.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
-        return ResponseEntity.ok(exportaciones);
+
+        List<EntityModel<ReporteExportado>> exportacionesModel = exportaciones.stream()
+                .map(assembler::toModel)
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok(CollectionModel.of(exportacionesModel,
+                linkTo(methodOn(MetricsController.class).verHistorialExportaciones()).withSelfRel()));
     }
 
     @GetMapping("/export/{id}")
-    public ResponseEntity<ReporteExportado> verExportacionPorId(@PathVariable Long id) {
+    public ResponseEntity<EntityModel<ReporteExportado>> verExportacionPorId(@PathVariable Long id) {
         return metricsService.buscarExportacionPorId(id)
+                .map(assembler::toModel)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
@@ -67,7 +73,7 @@ public class MetricsController {
     public ResponseEntity<?> actualizarRegistroExportacion(@PathVariable Long id, @Valid @RequestBody ReporteExportado reporte) {
         try {
             ReporteExportado actualizado = metricsService.actualizarExportacion(id, reporte);
-            return ResponseEntity.ok(actualizado);
+            return ResponseEntity.ok(assembler.toModel(actualizado));
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error: " + e.getMessage());
         }

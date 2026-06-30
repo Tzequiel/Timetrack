@@ -1,51 +1,72 @@
 package com.timetrack.notif.Controller;
+
+import com.timetrack.notif.Assemblers.NotifModelAssembler;
 import com.timetrack.notif.Model.EmailRequest;
 import com.timetrack.notif.Service.NotificacionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.CollectionModel;
+import org.springframework.hateoas.EntityModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController
 @RequestMapping("/api/notifications")
 public class NotificacionController {
+
     @Autowired
     private NotificacionService notifService;
 
+<<<<<<< HEAD
+=======
+    @Autowired
+    private NotifModelAssembler assembler;
+
+>>>>>>> origin/Assemblers2
     @PostMapping("/send")
     public ResponseEntity<String> enviarEmail(@RequestBody EmailRequest request) {
         String respuesta = notifService.enviarComprobante(request);
         return ResponseEntity.ok(respuesta);
     }
 
-
     @GetMapping
-    public ResponseEntity<List<EmailRequest>> obtenerTodas() {
+    public ResponseEntity<CollectionModel<EntityModel<EmailRequest>>> obtenerTodas() {
         List<EmailRequest> historial = notifService.obtenerTodas();
-        return ResponseEntity.ok(historial);
-    }
 
+        if (historial.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+
+        List<EntityModel<EmailRequest>> historialModel = historial.stream()
+                .map(assembler::toModel)
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok(CollectionModel.of(historialModel,
+                linkTo(methodOn(NotificacionController.class).obtenerTodas()).withSelfRel()));
+    }
 
     @GetMapping("/{id}")
-    public ResponseEntity<EmailRequest> obtenerPorId(@PathVariable Long id) {
+    public ResponseEntity<EntityModel<EmailRequest>> obtenerPorId(@PathVariable Long id) {
         EmailRequest notificacion = notifService.obtenerPorId(id);
         if (notificacion != null) {
-            return ResponseEntity.ok(notificacion);
+            return ResponseEntity.ok(assembler.toModel(notificacion));
         }
         return ResponseEntity.notFound().build();
     }
-
 
     @PutMapping("/{id}")
-    public ResponseEntity<EmailRequest> actualizarNotificacion(@PathVariable Long id, @RequestBody EmailRequest request) {
+    public ResponseEntity<EntityModel<EmailRequest>> actualizarNotificacion(@PathVariable Long id, @RequestBody EmailRequest request) {
         EmailRequest actualizada = notifService.actualizar(id, request);
         if (actualizada != null) {
-            return ResponseEntity.ok(actualizada);
+            return ResponseEntity.ok(assembler.toModel(actualizada));
         }
         return ResponseEntity.notFound().build();
     }
-
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminarNotificacion(@PathVariable Long id) {

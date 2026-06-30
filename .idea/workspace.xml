@@ -5,36 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="044333f1-404a-4281-9aea-6096706bd342" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Dto/ErrorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Excepciones/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/logger/logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Dto/ErrorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Excepciones/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/logger/logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Dto/ErrorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Excepciones/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/logger/logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maintenance/src/main/java/com/timetrack/maintenance/Dto/ErrorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maintenance/src/main/java/com/timetrack/maintenance/Excepciones/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maintenance/src/main/java/com/timetrack/maintenance/logger/logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manag/src/main/java/com/timetrack/manag/Dto/ErrorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manag/src/main/java/com/timetrack/manag/Excepciones/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manag/src/main/java/com/timetrack/manag/logger/logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/metrics/src/main/java/com/timetrack/metrics/Dto/ErrorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/metrics/src/main/java/com/timetrack/metrics/Excepciones/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/metrics/src/main/java/com/timetrack/metrics/logger/logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notif/src/main/java/com/timetrack/notif/Dto/ErrorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notif/src/main/java/com/timetrack/notif/Excepciones/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notif/src/main/java/com/timetrack/notif/logger/logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schedule/src/main/java/com/timetrack/schedule/Dto/ErrorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schedule/src/main/java/com/timetrack/schedule/Excepciones/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schedule/src/main/java/com/timetrack/schedule/logger/logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sucursales/src/main/java/com/timetrack/sucursales/Dto/ErrorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sucursales/src/main/java/com/timetrack/sucursales/Excepciones/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sucursales/src/main/java/com/timetrack/sucursales/logger/logger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Excepciones/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Excepciones/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/logger/logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/logger/logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Controller/AsistenciaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Controller/AsistenciaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Assemblers/AuthModelAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Assemblers/AuthModelAssembler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Assemblers/BiometricModelAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Assemblers/BiometricModelAssembler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Controller/BiometriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Controller/BiometriaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Assemblers/LocationModelAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Assemblers/LocationModelAssembler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Controller/LocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Controller/LocationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintenance/src/main/java/com/timetrack/maintenance/Assemblers/MaintenanceModelAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance/src/main/java/com/timetrack/maintenance/Assemblers/MaintenanceModelAssembler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintenance/src/main/java/com/timetrack/maintenance/Controller/LogAuditoriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance/src/main/java/com/timetrack/maintenance/Controller/LogAuditoriaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manag/src/main/java/com/timetrack/manag/Assemblers/ManagModelAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/manag/src/main/java/com/timetrack/manag/Assemblers/ManagModelAssembler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manag/src/main/java/com/timetrack/manag/Controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/manag/src/main/java/com/timetrack/manag/Controller/UsuarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metrics/src/main/java/com/timetrack/metrics/Assemblers/MetricsModelAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/metrics/src/main/java/com/timetrack/metrics/Assemblers/MetricsModelAssembler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metrics/src/main/java/com/timetrack/metrics/Controller/MetricsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/metrics/src/main/java/com/timetrack/metrics/Controller/MetricsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notif/src/main/java/com/timetrack/notif/Assemblers/NotifModelAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/notif/src/main/java/com/timetrack/notif/Assemblers/NotifModelAssembler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notif/src/main/java/com/timetrack/notif/Controller/NotificacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/notif/src/main/java/com/timetrack/notif/Controller/NotificacionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schedule/src/main/java/com/timetrack/schedule/Assemblers/ScheduleModelAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/schedule/src/main/java/com/timetrack/schedule/Assemblers/ScheduleModelAssembler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schedule/src/main/java/com/timetrack/schedule/Controller/HorarioTurnoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/schedule/src/main/java/com/timetrack/schedule/Controller/HorarioTurnoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sucursales/src/main/java/com/timetrack/sucursales/Assemblers/SucursalesModelAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/sucursales/src/main/java/com/timetrack/sucursales/Assemblers/SucursalesModelAssembler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +55,7 @@
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/Tzequiel/Timetrack.git",
-    "accountId": "6b7689da-351d-408e-8791-819f34d07f22"
+    "accountId": "7ebf4cb9-74ec-4350-ae55-fd31ac958733"
   }
 }]]></component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -93,17 +81,18 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "junitmockito",
+    "git-widget-placeholder": "Assemblers2",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/W608-PCXX/Desktop/time/Timetrack",
+    "last_opened_file_path": "C:/Users/PC/Desktop/eaea/Timetrack/pom.xml",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -233,6 +222,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.33514.17" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
