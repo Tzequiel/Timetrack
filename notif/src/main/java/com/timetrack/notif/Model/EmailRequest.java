@@ -6,6 +6,8 @@ import jakarta.validation.constraints.NotNull;
 
 public class EmailRequest {
 
+    private Long id;
+
     @NotNull(message = "El ID del usuario es obligatorio")
     private Long usuarioId;
 
@@ -18,6 +20,10 @@ public class EmailRequest {
 
     @NotBlank(message = "El mensaje del correo no puede estar vacío")
     private String mensaje;
+
+
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
     public Long getUsuarioId() { return usuarioId; }
     public void setUsuarioId(Long usuarioId) { this.usuarioId = usuarioId; }

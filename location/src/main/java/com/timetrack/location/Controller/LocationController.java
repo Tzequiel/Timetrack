@@ -1,15 +1,22 @@
 package com.timetrack.location.Controller;
 
+import com.timetrack.location.Assemblers.LocationModelAssembler;
 import com.timetrack.location.Model.Geocerca;
 import com.timetrack.location.Model.LocationRequest;
 import com.timetrack.location.Service.LocationService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.CollectionModel;
+import org.springframework.hateoas.EntityModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController
 @RequestMapping("/api/location")
@@ -18,38 +25,31 @@ public class LocationController {
     @Autowired
     private LocationService locationService;
 
+    @Autowired
+    private LocationModelAssembler assembler;
+
 
     @PostMapping("/geofence")
-    public ResponseEntity<Geocerca> crearOActualizarGeofence(@Valid @RequestBody Geocerca geocerca) {
+    public ResponseEntity<EntityModel<Geocerca>> crearOActualizarGeofence(@Valid @RequestBody Geocerca geocerca) {
         Geocerca resultado = locationService.guardarOActualizarGeofence(geocerca);
-        return ResponseEntity.status(HttpStatus.CREATED).body(resultado);
-    }
-
-
-    @PostMapping("/validate")
-    public ResponseEntity<String> validar(@Valid @RequestBody LocationRequest request) {
-        String resultado = locationService.validarUbicacion(request);
-
-        if (resultado.startsWith("Error:")) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resultado);
-    }
-        if (resultado.contains("Rechazada")) {
-                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(resultado);
-    }
-        return ResponseEntity.ok(resultado);
+        return ResponseEntity.status(HttpStatus.CREATED).body(assembler.toModel(resultado));
     }
 
     @GetMapping("/geofence")
-    public ResponseEntity<List<Geocerca>> obtenerTodasLasGeocercas() {
-        List<Geocerca> lista = locationService.obtenerTodas();
-        return ResponseEntity.ok(lista);
+    public ResponseEntity<CollectionModel<EntityModel<Geocerca>>> obtenerTodasLasGeocercas() {
+        List<EntityModel<Geocerca>> lista = locationService.obtenerTodas().stream()
+                .map(assembler::toModel)
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok(CollectionModel.of(lista,
+                linkTo(methodOn(LocationController.class).obtenerTodasLasGeocercas()).withSelfRel()));
     }
 
     @GetMapping("/geofence/{id}")
     public ResponseEntity<?> obtenerGeocercaPorId(@PathVariable Long id) {
         try {
             Geocerca geocerca = locationService.obtenerPorId(id);
-            return ResponseEntity.ok(geocerca);
+            return ResponseEntity.ok(assembler.toModel(geocerca));
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
@@ -59,10 +59,24 @@ public class LocationController {
     public ResponseEntity<?> actualizarGeocerca(@PathVariable Long id, @Valid @RequestBody Geocerca geocercaDetalles) {
         try {
             Geocerca actualizada = locationService.actualizarGeocerca(id, geocercaDetalles);
-            return ResponseEntity.ok(actualizada);
+            return ResponseEntity.ok(assembler.toModel(actualizada));
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
+    }
+
+
+    @PostMapping("/validate")
+    public ResponseEntity<String> validar(@Valid @RequestBody LocationRequest request) {
+        String resultado = locationService.validarUbicacion(request);
+
+        if (resultado.startsWith("Error:")) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resultado);
+        }
+        if (resultado.contains("Rechazada")) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(resultado);
+        }
+        return ResponseEntity.ok(resultado);
     }
 
     @DeleteMapping("/geofence/{id}")
