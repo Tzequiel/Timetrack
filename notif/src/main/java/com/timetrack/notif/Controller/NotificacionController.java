@@ -14,6 +14,11 @@ public class NotificacionController {
     private NotificacionService notifService;
 
     @PostMapping("/send")
+    public String enviarEmail(@RequestBody EmailRequest request) {
+        return notifService.enviarComprobante(request);
+    }
+
+    @PostMapping("/send")
     public ResponseEntity<String> enviarEmail(@RequestBody EmailRequest request) {
         String respuesta = notifService.enviarComprobante(request);
         return ResponseEntity.ok(respuesta);
