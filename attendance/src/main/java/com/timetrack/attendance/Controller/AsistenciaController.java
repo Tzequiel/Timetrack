@@ -23,7 +23,7 @@ public class AsistenciaController {
     @Autowired
     private AsistenciaService asistenciaService;
 
-    // Inyectamos nuestro Assembler recién configurado
+
     @Autowired
     private AttendanceModelAssembler assembler;
 
@@ -31,7 +31,6 @@ public class AsistenciaController {
     public ResponseEntity<?> clockIn(@RequestBody Asistencia asistencia) {
         try {
             Asistencia resultado = asistenciaService.registrarMarcaje(asistencia, 1L);
-            // Empacamos el resultado con el Assembler
             return ResponseEntity.ok(assembler.toModel(resultado));
         } catch (RuntimeException e) {
             if (e.getMessage().contains("Marcaje rechazado")) {
@@ -63,10 +62,8 @@ public class AsistenciaController {
     public ResponseEntity<CollectionModel<EntityModel<Asistencia>>> getHistoryByUserId(@PathVariable Long userId) {
         List<EntityModel<Asistencia>> historial = asistenciaService.obtenerMarcajesPorEmpleado(userId)
                 .stream()
-                .map(assembler::toModel) // Convertimos cada asistencia en un modelo con enlaces
+                .map(assembler::toModel)
                 .collect(Collectors.toList());
-
-        // Devolvemos la colección completa, añadiendo un enlace a esta misma búsqueda
         return ResponseEntity.ok(CollectionModel.of(historial,
                 linkTo(methodOn(AsistenciaController.class).getHistoryByUserId(userId)).withSelfRel()));
     }
@@ -97,7 +94,6 @@ public class AsistenciaController {
     @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminar(@PathVariable Long id) {
         asistenciaService.eliminar(id);
-        // El delete no necesita devolver el modelo, un mensaje de éxito está perfecto
         return ResponseEntity.ok("Marcaje de asistencia eliminado correctamente");
     }
 }

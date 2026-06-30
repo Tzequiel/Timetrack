@@ -25,11 +25,9 @@ public class LocationController {
     @Autowired
     private LocationService locationService;
 
-    // Inyectamos el Assembler
     @Autowired
     private LocationModelAssembler assembler;
 
-    // --- Endpoints de Gestión de Geocercas (Usan Assembler) ---
 
     @PostMapping("/geofence")
     public ResponseEntity<EntityModel<Geocerca>> crearOActualizarGeofence(@Valid @RequestBody Geocerca geocerca) {
@@ -51,7 +49,7 @@ public class LocationController {
     public ResponseEntity<?> obtenerGeocercaPorId(@PathVariable Long id) {
         try {
             Geocerca geocerca = locationService.obtenerPorId(id);
-            return ResponseEntity.ok(assembler.toModel(geocerca)); // Empacamos con enlaces
+            return ResponseEntity.ok(assembler.toModel(geocerca));
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
@@ -61,13 +59,12 @@ public class LocationController {
     public ResponseEntity<?> actualizarGeocerca(@PathVariable Long id, @Valid @RequestBody Geocerca geocercaDetalles) {
         try {
             Geocerca actualizada = locationService.actualizarGeocerca(id, geocercaDetalles);
-            return ResponseEntity.ok(assembler.toModel(actualizada)); // Empacamos con enlaces
+            return ResponseEntity.ok(assembler.toModel(actualizada));
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
     }
 
-    // --- Endpoints de Validación y Eliminación (NO usan Assembler) ---
 
     @PostMapping("/validate")
     public ResponseEntity<String> validar(@Valid @RequestBody LocationRequest request) {

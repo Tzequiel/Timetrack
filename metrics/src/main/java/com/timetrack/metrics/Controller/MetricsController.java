@@ -27,11 +27,8 @@ public class MetricsController {
     @Autowired
     private MetricsService metricsService;
 
-    // Inyectamos el Assembler de métricas
     @Autowired
     private MetricsModelAssembler assembler;
-
-    // --- Endpoints de Datos Operativos y Resúmenes (Devuelven DTOs sin cambios) ---
 
     @GetMapping("/monthly-summary/{userId}")
     public ResponseEntity<ReporteAsistenciaDTO> obtenerResumenMensual(@PathVariable Long userId) {
@@ -48,7 +45,6 @@ public class MetricsController {
         return ResponseEntity.ok(ausencias);
     }
 
-    // --- Endpoints del Historial de Exportación (Usan Assembler) ---
 
     @GetMapping("/export")
     public ResponseEntity<CollectionModel<EntityModel<ReporteExportado>>> verHistorialExportaciones() {
@@ -57,7 +53,6 @@ public class MetricsController {
             return ResponseEntity.noContent().build();
         }
 
-        // Mapeamos la lista interna a modelos enriquecidos con hipermedios
         List<EntityModel<ReporteExportado>> exportacionesModel = exportaciones.stream()
                 .map(assembler::toModel)
                 .collect(Collectors.toList());
@@ -69,7 +64,7 @@ public class MetricsController {
     @GetMapping("/export/{id}")
     public ResponseEntity<EntityModel<ReporteExportado>> verExportacionPorId(@PathVariable Long id) {
         return metricsService.buscarExportacionPorId(id)
-                .map(assembler::toModel) // Si existe el registro, se le añaden los enlaces HATEOAS
+                .map(assembler::toModel)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
@@ -78,7 +73,7 @@ public class MetricsController {
     public ResponseEntity<?> actualizarRegistroExportacion(@PathVariable Long id, @Valid @RequestBody ReporteExportado reporte) {
         try {
             ReporteExportado actualizado = metricsService.actualizarExportacion(id, reporte);
-            return ResponseEntity.ok(assembler.toModel(actualizado)); // Empacamos con enlaces
+            return ResponseEntity.ok(assembler.toModel(actualizado));
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error: " + e.getMessage());
         }

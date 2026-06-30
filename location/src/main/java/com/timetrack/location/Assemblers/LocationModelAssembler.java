@@ -14,9 +14,7 @@ public class LocationModelAssembler implements RepresentationModelAssembler<Geoc
     @Override
     public EntityModel<Geocerca> toModel(Geocerca entity) {
         return EntityModel.of(entity,
-                // Enlace a la geocerca específica usando su ID
                 linkTo(methodOn(LocationController.class).obtenerGeocercaPorId(entity.getId())).withSelfRel(),
-                // Enlace al listado de todas las geocercas
                 linkTo(methodOn(LocationController.class).obtenerTodasLasGeocercas()).withRel("todas-las-geocercas")
         );
     }

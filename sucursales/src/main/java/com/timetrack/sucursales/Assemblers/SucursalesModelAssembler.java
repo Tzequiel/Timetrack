@@ -14,9 +14,7 @@ public class SucursalesModelAssembler implements RepresentationModelAssembler<Su
     @Override
     public EntityModel<Sucursal> toModel(Sucursal entity) {
         return EntityModel.of(entity,
-                // Enlace a la sucursal específica
                 linkTo(methodOn(SucursalController.class).obtenerPorId(entity.getId())).withSelfRel(),
-                // Enlace al listado de sucursales
                 linkTo(methodOn(SucursalController.class).verTodas()).withRel("todas-las-sucursales")
         );
     }

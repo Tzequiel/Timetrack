@@ -15,9 +15,7 @@ public class BiometricModelAssembler implements RepresentationModelAssembler<Bio
     @Override
     public EntityModel<Biometria> toModel(Biometria entity) {
         return EntityModel.of(entity,
-                // Enlace a sí mismo usando el ID del registro biométrico
                 linkTo(methodOn(BiometriaController.class).verPorId(entity.getId())).withSelfRel(),
-                // Enlace general a todos los registros
                 linkTo(methodOn(BiometriaController.class).verTodas()).withRel("todas-las-biometrias")
         );
     }

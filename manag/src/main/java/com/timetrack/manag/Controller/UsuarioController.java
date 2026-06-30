@@ -24,7 +24,6 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
-    // Inyectamos el Assembler
     @Autowired
     private ManagModelAssembler assembler;
 
@@ -56,7 +55,7 @@ public class UsuarioController {
     @GetMapping("/{userId}")
     public ResponseEntity<EntityModel<Usuario>> verPorId(@PathVariable Long userId) {
         return usuarioService.buscarPorId(userId)
-                .map(assembler::toModel) // Convertimos el Optional en EntityModel si existe
+                .map(assembler::toModel)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
@@ -65,7 +64,7 @@ public class UsuarioController {
     public ResponseEntity<?> actualizarUsuario(@PathVariable Long userId, @Valid @RequestBody Usuario usuario) {
         try {
             Usuario actualizado = usuarioService.actualizar(userId, usuario);
-            return ResponseEntity.ok(assembler.toModel(actualizado)); // Empacamos con enlaces
+            return ResponseEntity.ok(assembler.toModel(actualizado));
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error: " + e.getMessage());
         }

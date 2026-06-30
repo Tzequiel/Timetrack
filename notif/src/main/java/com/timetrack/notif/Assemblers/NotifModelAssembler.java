@@ -15,9 +15,7 @@ public class NotifModelAssembler implements RepresentationModelAssembler<EmailRe
     @Override
     public EntityModel<EmailRequest> toModel(EmailRequest entity) {
         return EntityModel.of(entity,
-                // Enlace a la notificación específica
                 linkTo(methodOn(NotificacionController.class).obtenerPorId(entity.getId())).withSelfRel(),
-                // Enlace al listado de todas las notificaciones/correos
                 linkTo(methodOn(NotificacionController.class).obtenerTodas()).withRel("todas-las-notificaciones")
         );
     }

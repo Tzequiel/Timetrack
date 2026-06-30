@@ -24,11 +24,9 @@ public class AuthController {
     @Autowired
     private AuthService authService;
 
-    // Inyectamos el Assembler
     @Autowired
     private AuthModelAssembler assembler;
 
-    // --- Endpoints de Login/Auth (No usan Assembler porque devuelven Strings/Tokens) ---
 
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody LoginRequest request) {
@@ -56,7 +54,6 @@ public class AuthController {
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Token inválido o expirado");
     }
 
-    // --- Endpoints de Gestión de Usuarios (SÍ usan Assembler) ---
 
     @PostMapping("/users")
     public ResponseEntity<EntityModel<UsuarioAuth>> crearUsuario(@RequestBody UsuarioAuth usuario) {

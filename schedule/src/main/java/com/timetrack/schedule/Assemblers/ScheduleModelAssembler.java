@@ -15,9 +15,7 @@ public class ScheduleModelAssembler implements RepresentationModelAssembler<Hora
     @Override
     public EntityModel<HorarioTurno> toModel(HorarioTurno entity) {
         return EntityModel.of(entity,
-                // Enlace al horario específico
                 linkTo(methodOn(HorarioTurnoController.class).obtenerPorId(entity.getId())).withSelfRel(),
-                // Enlace a la lista global de horarios
                 linkTo(methodOn(HorarioTurnoController.class).obtenerTodos()).withRel("todos-los-horarios")
         );
     }

@@ -23,11 +23,8 @@ public class BiometriaController {
     @Autowired
     private BiometriaService biometriaService;
 
-    // Inyectamos el Assembler
     @Autowired
     private BiometricModelAssembler assembler;
-
-    // --- Endpoints de Registro (Usan Assembler) ---
 
     @PostMapping("/register-face")
     public ResponseEntity<EntityModel<Biometria>> registrarRostro(@RequestParam Long usuarioId, @RequestParam String vectorFacial) {
@@ -41,7 +38,6 @@ public class BiometriaController {
         return ResponseEntity.status(HttpStatus.CREATED).body(assembler.toModel(resultado));
     }
 
-    // --- Endpoints de Verificación (NO usan Assembler porque devuelven Strings) ---
 
     @PostMapping("/verify-face")
     public ResponseEntity<String> verificarRostro(@RequestParam Long usuarioId, @RequestParam String vectorFacial) {
@@ -60,8 +56,6 @@ public class BiometriaController {
         }
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Fallo en Verificación de Huella Dactilar");
     }
-
-    // --- Endpoints de Búsqueda y Gestión (Usan Assembler) ---
 
     @GetMapping
     public ResponseEntity<CollectionModel<EntityModel<Biometria>>> verTodas() {

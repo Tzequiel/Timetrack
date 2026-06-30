@@ -24,7 +24,6 @@ public class HorarioTurnoController {
     @Autowired
     private HorarioTurnoService horarioService;
 
-    // Inyectamos el Assembler
     @Autowired
     private ScheduleModelAssembler assembler;
 

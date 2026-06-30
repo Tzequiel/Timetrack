@@ -14,9 +14,7 @@ public class AuthModelAssembler implements RepresentationModelAssembler<UsuarioA
     @Override
     public EntityModel<UsuarioAuth> toModel(UsuarioAuth entity) {
         return EntityModel.of(entity,
-                // Enlace a sí mismo (ver este usuario en particular)
                 linkTo(methodOn(AuthController.class).verPorId(entity.getId())).withSelfRel(),
-                // Enlace a la lista de todos los usuarios
                 linkTo(methodOn(AuthController.class).verTodos()).withRel("todos-los-usuarios")
         );
     }

@@ -15,9 +15,7 @@ public class MetricsModelAssembler implements RepresentationModelAssembler<Repor
     @Override
     public EntityModel<ReporteExportado> toModel(ReporteExportado entity) {
         return EntityModel.of(entity,
-                // Enlace al registro de exportación individual por su ID
                 linkTo(methodOn(MetricsController.class).verExportacionPorId(entity.getId())).withSelfRel(),
-                // Enlace relacional al historial completo de exportaciones
                 linkTo(methodOn(MetricsController.class).verHistorialExportaciones()).withRel("historial-exportaciones")
         );
     }

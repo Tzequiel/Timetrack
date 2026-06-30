@@ -24,7 +24,6 @@ public class LogAuditoriaController {
     @Autowired
     private LogAuditoriaService logService;
 
-    // Inyectamos el Assembler
     @Autowired
     private MaintenanceModelAssembler assembler;
 
@@ -41,7 +40,6 @@ public class LogAuditoriaController {
             return ResponseEntity.noContent().build();
         }
 
-        // Convertimos la lista de logs en una lista de modelos con enlaces
         List<EntityModel<LogAuditoria>> logsModel = logs.stream()
                 .map(assembler::toModel)
                 .collect(Collectors.toList());
@@ -53,7 +51,7 @@ public class LogAuditoriaController {
     @GetMapping("/logs/{id}")
     public ResponseEntity<EntityModel<LogAuditoria>> verPorId(@PathVariable Long id) {
         return logService.buscarPorId(id)
-                .map(assembler::toModel) // Pasamos la entidad por el Assembler si existe
+                .map(assembler::toModel)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
@@ -62,7 +60,7 @@ public class LogAuditoriaController {
     public ResponseEntity<?> actualizarLog(@PathVariable Long id, @Valid @RequestBody LogAuditoria log) {
         try {
             LogAuditoria actualizado = logService.actualizar(id, log);
-            return ResponseEntity.ok(assembler.toModel(actualizado)); // Empacamos con enlaces
+            return ResponseEntity.ok(assembler.toModel(actualizado));
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error: " + e.getMessage());
         }

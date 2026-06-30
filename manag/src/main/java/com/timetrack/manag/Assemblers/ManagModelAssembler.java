@@ -15,9 +15,7 @@ public class ManagModelAssembler implements RepresentationModelAssembler<Usuario
     @Override
     public EntityModel<Usuario> toModel(Usuario entity) {
         return EntityModel.of(entity,
-                // Enlace a la vista individual de este usuario
                 linkTo(methodOn(UsuarioController.class).verPorId(entity.getId())).withSelfRel(),
-                // Enlace a la vista de todos los usuarios del sistema
                 linkTo(methodOn(UsuarioController.class).verTodos()).withRel("todos-los-usuarios")
         );
     }

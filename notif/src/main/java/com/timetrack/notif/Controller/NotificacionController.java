@@ -22,11 +22,9 @@ public class NotificacionController {
     @Autowired
     private NotificacionService notifService;
 
-    // Inyectamos el Assembler
     @Autowired
     private NotifModelAssembler assembler;
 
-    // Se eliminó el método duplicado public String enviarEmail(...) para evitar conflictos
     @PostMapping("/send")
     public ResponseEntity<String> enviarEmail(@RequestBody EmailRequest request) {
         String respuesta = notifService.enviarComprobante(request);
@@ -41,7 +39,6 @@ public class NotificacionController {
             return ResponseEntity.noContent().build();
         }
 
-        // Convertimos la lista a modelos con enlaces HATEOAS
         List<EntityModel<EmailRequest>> historialModel = historial.stream()
                 .map(assembler::toModel)
                 .collect(Collectors.toList());
@@ -54,7 +51,7 @@ public class NotificacionController {
     public ResponseEntity<EntityModel<EmailRequest>> obtenerPorId(@PathVariable Long id) {
         EmailRequest notificacion = notifService.obtenerPorId(id);
         if (notificacion != null) {
-            return ResponseEntity.ok(assembler.toModel(notificacion)); // Empacamos con enlaces
+            return ResponseEntity.ok(assembler.toModel(notificacion));
         }
         return ResponseEntity.notFound().build();
     }
@@ -63,7 +60,7 @@ public class NotificacionController {
     public ResponseEntity<EntityModel<EmailRequest>> actualizarNotificacion(@PathVariable Long id, @RequestBody EmailRequest request) {
         EmailRequest actualizada = notifService.actualizar(id, request);
         if (actualizada != null) {
-            return ResponseEntity.ok(assembler.toModel(actualizada)); // Empacamos con enlaces
+            return ResponseEntity.ok(assembler.toModel(actualizada));
         }
         return ResponseEntity.notFound().build();
     }
