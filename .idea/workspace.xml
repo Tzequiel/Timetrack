@@ -5,15 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="044333f1-404a-4281-9aea-6096706bd342" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Assemblers/AttendanceModelAssembler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Assemblers/AuthModelAssembler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Assemblers/BiometricModelAssembler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Assemblers/LocationModelAssembler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintenance/src/main/java/com/timetrack/maintenance/Assemblers/MaintenanceModelAssembler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manag/src/main/java/com/timetrack/manag/Assemblers/ManagModelAssembler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/metrics/src/main/java/com/timetrack/metrics/Assemblers/MetricsModelAssembler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notif/src/main/java/com/timetrack/notif/Assemblers/NotifModelAssembler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schedule/src/main/java/com/timetrack/schedule/Assemblers/ScheduleModelAssembler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sucursales/src/main/java/com/timetrack/sucursales/Assemblers/SucursalesModelAssembler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/attendance/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Controller/AsistenciaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Controller/AsistenciaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Service/AsistenciaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Service/AsistenciaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/biometric/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/biometric/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Controller/BiometriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Controller/BiometriaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Service/BiometriaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Service/BiometriaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/location/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Controller/LocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Controller/LocationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Service/LocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Service/LocationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintenance/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintenance/src/main/java/com/timetrack/maintenance/Controller/LogAuditoriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance/src/main/java/com/timetrack/maintenance/Controller/LogAuditoriaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manag/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/manag/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manag/src/main/java/com/timetrack/manag/Controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/manag/src/main/java/com/timetrack/manag/Controller/UsuarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metrics/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/metrics/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metrics/src/main/java/com/timetrack/metrics/Controller/MetricsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/metrics/src/main/java/com/timetrack/metrics/Controller/MetricsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notif/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/notif/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notif/src/main/java/com/timetrack/notif/Controller/NotificacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/notif/src/main/java/com/timetrack/notif/Controller/NotificacionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notif/src/main/java/com/timetrack/notif/Model/EmailRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/notif/src/main/java/com/timetrack/notif/Model/EmailRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schedule/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/schedule/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schedule/src/main/java/com/timetrack/schedule/Controller/HorarioTurnoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/schedule/src/main/java/com/timetrack/schedule/Controller/HorarioTurnoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sucursales/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sucursales/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sucursales/src/main/java/com/timetrack/sucursales/Controller/SucursalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sucursales/src/main/java/com/timetrack/sucursales/Controller/SucursalController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,12 +65,12 @@
     &quot;assignee&quot;: &quot;K4USTIC&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Tzequiel/Timetrack.git&quot;,
-    &quot;accountId&quot;: &quot;c3b5a773-0a8d-4e31-9040-cdebf013684c&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Tzequiel/Timetrack.git",
+    "accountId": "7ebf4cb9-74ec-4350-ae55-fd31ac958733"
   }
-}</component>
+}]]></component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -71,17 +94,18 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "primeras-4",
+    "git-widget-placeholder": "Assemblers2",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/W608-PCXX/Desktop/Timetrck/Timetrack/pom.xml",
+    "last_opened_file_path": "C:/Users/PC/Desktop/eaea/Timetrack/pom.xml",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -190,8 +214,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.33514.17" />
       </set>
     </attachedChunks>
   </component>

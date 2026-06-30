@@ -1,33 +1,47 @@
 package com.timetrack.biometric.Controller;
 
+import com.timetrack.biometric.Assemblers.BiometricModelAssembler;
 import com.timetrack.biometric.Model.Biometria;
 import com.timetrack.biometric.Service.BiometriaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.CollectionModel;
+import org.springframework.hateoas.EntityModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController
 @RequestMapping("/api/biometrics")
-public class BiometriaController { // Cambiado o mantenido según tu estructura, usualmente BiometriaController
+public class BiometriaController {
 
     @Autowired
     private BiometriaService biometriaService;
 
-    // Endpoints existentes
+    // Inyectamos el Assembler
+    @Autowired
+    private BiometricModelAssembler assembler;
+
+    // --- Endpoints de Registro (Usan Assembler) ---
+
     @PostMapping("/register-face")
-    public ResponseEntity<Biometria> registrarRostro(@RequestParam Long usuarioId, @RequestParam String vectorFacial) {
+    public ResponseEntity<EntityModel<Biometria>> registrarRostro(@RequestParam Long usuarioId, @RequestParam String vectorFacial) {
         Biometria resultado = biometriaService.registrarRostro(usuarioId, vectorFacial);
-        return ResponseEntity.status(HttpStatus.CREATED).body(resultado);
+        return ResponseEntity.status(HttpStatus.CREATED).body(assembler.toModel(resultado));
     }
 
     @PostMapping("/register-fingerprint")
-    public ResponseEntity<Biometria> registrarHuella(@RequestParam Long usuarioId, @RequestParam String huellaDactilar) {
+    public ResponseEntity<EntityModel<Biometria>> registrarHuella(@RequestParam Long usuarioId, @RequestParam String huellaDactilar) {
         Biometria resultado = biometriaService.registrarHuella(usuarioId, huellaDactilar);
-        return ResponseEntity.status(HttpStatus.CREATED).body(resultado);
+        return ResponseEntity.status(HttpStatus.CREATED).body(assembler.toModel(resultado));
     }
+
+    // --- Endpoints de Verificación (NO usan Assembler porque devuelven Strings) ---
 
     @PostMapping("/verify-face")
     public ResponseEntity<String> verificarRostro(@RequestParam Long usuarioId, @RequestParam String vectorFacial) {
@@ -47,19 +61,28 @@ public class BiometriaController { // Cambiado o mantenido según tu estructura,
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Fallo en Verificación de Huella Dactilar");
     }
 
+    // --- Endpoints de Búsqueda y Gestión (Usan Assembler) ---
+
     @GetMapping
-    public ResponseEntity<List<Biometria>> verTodas() {
-        return ResponseEntity.ok(biometriaService.obtenerTodas());
+    public ResponseEntity<CollectionModel<EntityModel<Biometria>>> verTodas() {
+        List<EntityModel<Biometria>> biometrias = biometriaService.obtenerTodas().stream()
+                .map(assembler::toModel)
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok(CollectionModel.of(biometrias,
+                linkTo(methodOn(BiometriaController.class).verTodas()).withSelfRel()));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Biometria> verPorId(@PathVariable Long id) {
-        return ResponseEntity.ok(biometriaService.obtenerPorId(id));
+    public ResponseEntity<EntityModel<Biometria>> verPorId(@PathVariable Long id) {
+        Biometria biometria = biometriaService.obtenerPorId(id);
+        return ResponseEntity.ok(assembler.toModel(biometria));
     }
 
     @GetMapping("/user/{usuarioId}")
-    public ResponseEntity<Biometria> verPorUsuarioId(@PathVariable Long usuarioId) {
-        return ResponseEntity.ok(biometriaService.obtenerPorUsuarioId(usuarioId));
+    public ResponseEntity<EntityModel<Biometria>> verPorUsuarioId(@PathVariable Long usuarioId) {
+        Biometria biometria = biometriaService.obtenerPorUsuarioId(usuarioId);
+        return ResponseEntity.ok(assembler.toModel(biometria));
     }
 
     @DeleteMapping("/{id}")
