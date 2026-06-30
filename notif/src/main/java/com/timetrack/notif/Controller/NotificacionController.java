@@ -22,12 +22,9 @@ public class NotificacionController {
     @Autowired
     private NotificacionService notifService;
 
-<<<<<<< HEAD
-=======
     @Autowired
     private NotifModelAssembler assembler;
 
->>>>>>> origin/Assemblers2
     @PostMapping("/send")
     public ResponseEntity<String> enviarEmail(@RequestBody EmailRequest request) {
         String respuesta = notifService.enviarComprobante(request);
