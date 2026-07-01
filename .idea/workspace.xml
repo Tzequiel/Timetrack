@@ -4,73 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="044333f1-404a-4281-9aea-6096706bd342" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Controller/AsistenciaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/attendance/src/main/java/com/timetrack/attendance/Controller/AsistenciaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Assemblers/AuthModelAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Assemblers/AuthModelAssembler.java" afterDir="false" />
+    <list default="true" id="b5d1310e-930d-4612-ae21-ca47260cf0ab" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Config/Securityconfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Config/Securityconfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Assemblers/BiometricModelAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Assemblers/BiometricModelAssembler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Controller/BiometriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/biometric/src/main/java/com/timetrack/biometric/Controller/BiometriaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Assemblers/LocationModelAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Assemblers/LocationModelAssembler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Controller/LocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/location/src/main/java/com/timetrack/location/Controller/LocationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintenance/src/main/java/com/timetrack/maintenance/Assemblers/MaintenanceModelAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance/src/main/java/com/timetrack/maintenance/Assemblers/MaintenanceModelAssembler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maintenance/src/main/java/com/timetrack/maintenance/Controller/LogAuditoriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance/src/main/java/com/timetrack/maintenance/Controller/LogAuditoriaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manag/src/main/java/com/timetrack/manag/Assemblers/ManagModelAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/manag/src/main/java/com/timetrack/manag/Assemblers/ManagModelAssembler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manag/src/main/java/com/timetrack/manag/Controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/manag/src/main/java/com/timetrack/manag/Controller/UsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metrics/src/main/java/com/timetrack/metrics/Assemblers/MetricsModelAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/metrics/src/main/java/com/timetrack/metrics/Assemblers/MetricsModelAssembler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metrics/src/main/java/com/timetrack/metrics/Controller/MetricsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/metrics/src/main/java/com/timetrack/metrics/Controller/MetricsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notif/src/main/java/com/timetrack/notif/Assemblers/NotifModelAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/notif/src/main/java/com/timetrack/notif/Assemblers/NotifModelAssembler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notif/src/main/java/com/timetrack/notif/Controller/NotificacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/notif/src/main/java/com/timetrack/notif/Controller/NotificacionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schedule/src/main/java/com/timetrack/schedule/Assemblers/ScheduleModelAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/schedule/src/main/java/com/timetrack/schedule/Assemblers/ScheduleModelAssembler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schedule/src/main/java/com/timetrack/schedule/Controller/HorarioTurnoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/schedule/src/main/java/com/timetrack/schedule/Controller/HorarioTurnoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sucursales/src/main/java/com/timetrack/sucursales/Assemblers/SucursalesModelAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/sucursales/src/main/java/com/timetrack/sucursales/Assemblers/SucursalesModelAssembler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Controller/AuthController2.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/java/com/timetrack/auth/Controller/AuthController2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="package-info" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;K4USTIC&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Tzequiel"
   }
-}</component>
+}]]></component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/Tzequiel/Timetrack.git",
     "accountId": "7ebf4cb9-74ec-4350-ae55-fd31ac958733"
   }
 }]]></component>
-  <component name="KubernetesApiPersistence">{}</component>
-  <component name="KubernetesApiProvider">{
-  &quot;isMigrated&quot;: true
-}</component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1,
-  &quot;fromUser&quot;: false
-}</component>
-  <component name="ProjectId" id="3DKjqqpz78w4FfYlUwP3zvKJAWH" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6,
+  "fromUser": false
+}]]></component>
+  <component name="ProjectId" id="3Ft3L5HRaDfF4nnbrEP1kSu6fp7" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -80,174 +53,177 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "Spring Boot.AttendanceApplication.executor": "Run",
+    "Spring Boot.AuthApplication.executor": "Run",
+    "Spring Boot.BiometricApplication.executor": "Run",
+    "Spring Boot.LocationApplication.executor": "Run",
+    "Spring Boot.MaintenanceApplication.executor": "Run",
+    "Spring Boot.ManagApplication.executor": "Run",
+    "Spring Boot.MetricsApplication.executor": "Run",
+    "Spring Boot.NotifApplication.executor": "Run",
+    "Spring Boot.ScheduleApplication.executor": "Run",
+    "Spring Boot.SucursalesApplication.executor": "Run",
+    "Spring Boot.attendance.executor": "Run",
+    "Spring Boot.auth.executor": "Run",
+    "Spring Boot.biometric.executor": "Run",
+    "Spring Boot.location.executor": "Run",
+    "Spring Boot.maintenance.executor": "Run",
+    "Spring Boot.manag.executor": "Run",
+    "Spring Boot.metrics.executor": "Run",
+    "Spring Boot.notif.executor": "Run",
+    "Spring Boot.schedule.executor": "Run",
+    "Spring Boot.sucursales.executor": "Run",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "Assemblers2",
-    "ignore.virus.scanning.warn.message": "true",
+    "git-widget-placeholder": "mergeAR",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/PC/Desktop/eaea/Timetrack/pom.xml",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.configurations.included.in.services": "true",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;logs&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/W608-PCXX/Desktop/TimeTrack/Timetrack&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+    "last_opened_file_path": "C:/Users/PC/Desktop/timetrack final/Timetrack/pom.xml",
+    "to.speed.mode.migration.done": "true"
   }
-}</component>
+}]]></component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
-        <option value="KtorApplicationConfigurationType" />
-        <option value="MicronautRunConfigurationType" />
-        <option value="QuarkusRunConfigurationType" />
-        <option value="SpringBootApplicationConfigurationType" />
+        <option value="CompoundRunConfigurationType" />
       </set>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="AttendanceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+  <component name="RunManager" selected="Spring Boot.attendance">
+    <configuration name="Todos" type="CompoundRunConfigurationType">
+      <toRun name="attendance" type="SpringBootApplicationConfigurationType" />
+      <toRun name="auth" type="SpringBootApplicationConfigurationType" />
+      <toRun name="biometric" type="SpringBootApplicationConfigurationType" />
+      <toRun name="location" type="SpringBootApplicationConfigurationType" />
+      <toRun name="maintenance" type="SpringBootApplicationConfigurationType" />
+      <toRun name="manag" type="SpringBootApplicationConfigurationType" />
+      <toRun name="metrics" type="SpringBootApplicationConfigurationType" />
+      <toRun name="notif" type="SpringBootApplicationConfigurationType" />
+      <toRun name="schedule" type="SpringBootApplicationConfigurationType" />
+      <toRun name="sucursales" type="SpringBootApplicationConfigurationType" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="CompoundRunConfigurationType">
+      <toRun name="attendance" type="SpringBootApplicationConfigurationType" />
+      <toRun name="auth" type="SpringBootApplicationConfigurationType" />
+      <toRun name="biometric" type="SpringBootApplicationConfigurationType" />
+      <toRun name="location" type="SpringBootApplicationConfigurationType" />
+      <toRun name="maintenance" type="SpringBootApplicationConfigurationType" />
+      <toRun name="manag" type="SpringBootApplicationConfigurationType" />
+      <toRun name="metrics" type="SpringBootApplicationConfigurationType" />
+      <toRun name="notif" type="SpringBootApplicationConfigurationType" />
+      <toRun name="schedule" type="SpringBootApplicationConfigurationType" />
+      <toRun name="sucursales" type="SpringBootApplicationConfigurationType" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="SPRING_BOOT_MAIN_CLASS" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="attendance" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="attendance" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.timetrack.attendance.AttendanceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <configuration name="auth" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="auth" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.timetrack.auth.AuthApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BiometricApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <configuration name="biometric" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="biometric" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.timetrack.biometric.BiometricApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LocationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <configuration name="location" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="location" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.timetrack.location.LocationApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaintenanceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <configuration name="maintenance" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="maintenance" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.timetrack.maintenance.MaintenanceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ManagApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <configuration name="manag" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="manag" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.timetrack.manag.ManagApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MetricsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <configuration name="metrics" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="metrics" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.timetrack.metrics.MetricsApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NotifApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <configuration name="notif" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="notif" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.timetrack.notif.NotifApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ScheduleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <configuration name="schedule" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="schedule" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.timetrack.schedule.ScheduleApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SucursalesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <configuration name="sucursales" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="sucursales" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.timetrack.sucursales.SucursalesApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Compound.Todos" />
+      <item itemvalue="Spring Boot.attendance" />
+      <item itemvalue="Spring Boot.auth" />
+      <item itemvalue="Spring Boot.biometric" />
+      <item itemvalue="Spring Boot.location" />
+      <item itemvalue="Spring Boot.maintenance" />
+      <item itemvalue="Spring Boot.manag" />
+      <item itemvalue="Spring Boot.metrics" />
+      <item itemvalue="Spring Boot.notif" />
+      <item itemvalue="Spring Boot.schedule" />
+      <item itemvalue="Spring Boot.sucursales" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.33514.17" />
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.33813.25" />
       </set>
     </attachedChunks>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="044333f1-404a-4281-9aea-6096706bd342" name="Changes" comment="" />
-      <created>1778037848907</created>
+      <changelist id="b5d1310e-930d-4612-ae21-ca47260cf0ab" name="Changes" comment="" />
+      <created>1782880478232</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1778037848907</updated>
-      <workItem from="1778037850171" duration="1440000" />
-      <workItem from="1778039325203" duration="1459000" />
-      <workItem from="1780949925397" duration="1114000" />
-      <workItem from="1781022922712" duration="1161000" />
-      <workItem from="1781024771270" duration="1581000" />
-      <workItem from="1782232416512" duration="4093000" />
+      <updated>1782880478232</updated>
     </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
 </project>

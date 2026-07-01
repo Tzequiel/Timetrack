@@ -28,7 +28,7 @@ public class AuthController {
     private AuthModelAssembler assembler;
 
 
-    @PostMapping("/login")
+    @PostMapping("/login-old")
     public ResponseEntity<String> login(@RequestBody LoginRequest request) {
         String token = authService.validarLogin(request);
         if (token == null) {

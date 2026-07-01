@@ -22,7 +22,7 @@ public class Securityconfig {
             .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
             // Endpoint libre para pedir el token sin credenciales
-            .requestMatchers("/auth/login").permitAll()
+            .requestMatchers("/api/auth/login").permitAll()
             .anyRequest().authenticated()
             )
             .addFilterBefore(
